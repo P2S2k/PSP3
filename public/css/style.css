@@ -19,187 +19,141 @@ h1, h2, h3, h4 {
   src: url("https://kit.fontawesome.com/a32a00cd06.js");
 }
 body {
-  width: 100%;
-  height: auto;
-}
-
-.restnom {
-  width: 30%;
-  display: flex;
-  justify-content: space-between;
-  font-size: x-large;
-}
-.restnom:hover > .lovit {
-  animation: heartcolor 2000ms forwards;
-}
-
-.lovit {
-  color: white;
-}
-
-@keyframes heartcolor {
-  0% {
-    opacity: initial;
-  }
-  50% {
-    color: black;
-    opacity: 0.5;
-  }
-  100% {
-    color: black;
-    opacity: 1;
-  }
-}
-@keyframes test {
-  0% {
-    transform: translateX(0px);
-  }
-  100% {
-    transform: translateX(-80px);
-  }
-}
-.eat {
-  width: 450px;
-  height: 60px;
-  border: red solid 1px;
-  display: flex;
-  justify-content: space-between;
-  overflow: visible;
-}
-
-.food {
-  width: 220px;
-  height: 50px;
-  vertical-align: middle;
-  vertical-align: middle;
-  margin-bottom: 10px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  /*
-  &:active{
-  	animation: test 500ms forwards;
-  }
-  */
-  /*
-  &:hover + .select {
-  	animation: douce forwards;
-  }
-  */
-}
-.food:hover + .price {
-  animation: test forwards;
-}
-
-.price {
-  min-width: 140px;
-  border: 1px blue solid;
-  display: flex;
-  height: auto;
-  /*	justify-content: space-between; */
-}
-
-/*
-.price p
-{
-	min-width: 80px;
-	height: 40px;
-
-}
-*/
-.tune {
-  box-sizing: border-box;
-  max-width: 30px;
-  height: auto;
-  text-align: left;
-  padding-left: 3px;
-}
-
-.select {
-  box-sizing: border-box;
-  min-width: 30px;
-  height: auto;
-  text-align: left;
-  background-color: yellow;
-}
-
-.badoo {
-  width: fit-content;
-  height: fit-content;
-  font-size: xx-large;
-  color: green;
-  /*
-  transform: rotate(0deg);
-  transition: transform 1000ms ease-in-out;
-  */
-}
-
-.turn {
-  margin-bottom: 10px;
-}
-
-.turn:active + .badoo {
-  animation: douce 1000ms;
-}
-
-@keyframes douce {
-  0% {
-    background-color: initial;
-  }
-  100% {
-    background-color: aqua;
-  }
-  /*
-  	0%{
-  		transform: rotatez(0deg);
-  	}
-
-  	100%{
-  		transform-origin: center;
-  		transform: rotatez(-720deg);
-  	}
-  */
-}
-.plat {
-  width: 400px;
-  height: 80px;
-  border: 1px black solid;
-  margin-top: 50px;
-}
-.plat .platname {
-  color: red;
+  width: 50%;
+  min-width: 375px;
+  height: 2000px;
+  margin-left: auto;
+  margin-right: auto;
+  border: green 1px solid;
 }
 
 header {
   width: 100%;
-  height: 200px;
-  border: blue 1px;
 }
-
-.logo {
+header .bandeau {
   display: flex;
-  align-items: center;
+  justify-content: space-between;
   width: 100%;
-  height: 120px;
-  border: 2px red solid;
-}
-
-.arrow {
-  width: 100%;
-  height: 40%;
-  color: black;
-  text-decoration: none;
-  background-color: transparent;
-  font-size: 50px;
-  display: flex;
-  position: relative;
-  border: red 1px solid;
-}
-
-.logoomf {
-  width: 220px;
   height: 50px;
-  vertical-align: middle;
+  padding-top: 5px;
+}
+header .bandeau .arrow, header .bandeau .right {
+  box-sizing: border-box;
+  width: 25px;
+  height: 40px;
+  font-size: x-large;
+  background-color: transparent;
+  color: black;
+  padding-top: 8px;
+}
+header .bandeau .logoomf {
+  width: 200px;
+  height: 40px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 1100px;
+  max-height: 1100px;
+}
+main .photo {
+  width: 100%;
+  height: 250px;
+  display: flex;
+  border: 1px black solid;
+  background: url(./images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
+  background-size: cover;
+  background-position: center;
+  align-items: center;
+  margin-bottom: -17px;
+}
+main .resto {
+  width: 100%;
+  min-height: 880px;
+  border-radius: 25px 25px 0px 0px;
+  background-color: white;
+}
+main .resto .restnom {
+  width: 100%;
+  height: 50px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 10px;
+}
+main .resto .restnom .nom {
+  width: 75%;
+  height: 45px;
+  font-family: "shrikhand", cursive;
+  font-size: 36px;
+}
+main .resto .restnom .nom::first-letter {
+  text-transform: uppercase;
+}
+main .resto .restnom .lovit {
+  width: 30px;
+  height: 45px;
+  font-size: 28px;
+  padding-top: 10px;
+}
+main .resto .restnom:hover > .lovit {
+  animation: heartcolor 2000ms forwards;
+}
+main .resto .entrees {
+  box-sizing: border-box;
+  width: 100%;
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  padding-left: 10px;
+}
+main .resto .entrees .text {
+  height: 40px;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+main .resto .entrees .barre {
+  width: 12%;
+  height: 4px;
+  background-color: #99E2D0;
+}
+main .resto .food {
+  width: 95%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-top: 10px;
+  border-radius: 10px;
+  font-size: 18px;
+  background-color: pink;
+}
+main .resto .plats {
+  box-sizing: border-box;
+  width: 100%;
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  padding-left: 10px;
+}
+main .resto .plats .text {
+  height: 40px;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+main .resto .plats .barre {
+  width: 12%;
+  height: 4px;
+  background-color: #99E2D0;
 }
 
 /*# sourceMappingURL=style.css.map */
