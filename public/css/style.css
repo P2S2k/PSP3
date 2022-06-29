@@ -21,7 +21,8 @@ h1, h2, h3, h4 {
 body {
   width: 50%;
   min-width: 375px;
-  height: 2000px;
+  max-width: 750px;
+  height: fit-content;
   margin-left: auto;
   margin-right: auto;
   border: green 1px solid;
@@ -50,15 +51,95 @@ header .bandeau .logoomf {
   width: 200px;
   height: 40px;
 }
+header .entete {
+  width: 100%;
+  height: 250px;
+}
+header .entete .localisation {
+  width: 100%;
+  height: 40px;
+  box-sizing: border-box;
+  font-size: 16px;
+  background-color: rgb(208, 203, 203);
+  padding-top: 10px;
+  text-align: center;
+}
+header .entete .text1 {
+  width: 70%;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+header .entete .text2 {
+  width: 85%;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 16px;
+  text-align: center;
+}
+header .entete .decouvre {
+  box-sizing: border-box;
+  margin-top: 30px;
+  width: 50%;
+  height: 40px;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 25px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #FF79DA;
+  color: white;
+  padding-top: 8px;
+  text-align: center;
+}
+header .entete .decouvre .explore {
+  background-color: transparent;
+  border: 0;
+  color: white;
+  font-size: 16px;
+}
 
 main {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 1100px;
-  max-height: 1100px;
+  height: fit-content;
 }
-main .photo {
+main .ccd {
+  width: 85%;
+  height: fit-content;
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 30px;
+  vertical-align: middle;
+}
+main .ccd .num {
+  box-sizing: border-box;
+  color: black;
+  min-width: 30px;
+  max-height: 30px;
+  border-radius: 15px;
+  background-color: #FF79DA;
+  text-align: center;
+  padding-top: 4px;
+  margin-right: -15px;
+  color: white;
+}
+main .ccd .choirest {
+  box-sizing: border-box;
+  width: 90%;
+  height: 60px;
+  background-color: rgb(243, 236, 236);
+  text-align: center;
+  padding-top: 20px;
+  margin-top: 0px;
+  border-radius: 12px;
+  float: left;
+}
+main .photoALF {
   width: 100%;
   height: 250px;
   display: flex;
@@ -68,6 +149,44 @@ main .photo {
   background-position: center;
   align-items: center;
   margin-bottom: -17px;
+}
+main .photoLNE {
+  width: 100%;
+  height: 250px;
+  display: flex;
+  border: 1px black solid;
+  overflow: hidden;
+  align-items: center;
+  margin-bottom: -17px;
+}
+main .photoLNE .lnepic {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+main .photoLPG {
+  width: 100%;
+  height: 250px;
+  border: 1px black solid;
+  overflow: hidden;
+  margin-bottom: -17px;
+}
+main .photoLPG .lpgpic {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+main .photoLDS {
+  width: 100%;
+  height: 250px;
+  border: 1px black solid;
+  overflow: hidden;
+  margin-bottom: -17px;
+}
+main .photoLDS .ldspic {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
 }
 main .resto {
   width: 100%;
@@ -86,10 +205,10 @@ main .resto .restnom {
   margin-top: 10px;
 }
 main .resto .restnom .nom {
-  width: 75%;
+  width: 85%;
   height: 45px;
   font-family: "shrikhand", cursive;
-  font-size: 36px;
+  font-size: 28px;
 }
 main .resto .restnom .nom::first-letter {
   text-transform: uppercase;
@@ -98,7 +217,7 @@ main .resto .restnom .lovit {
   width: 30px;
   height: 45px;
   font-size: 28px;
-  padding-top: 10px;
+  padding-top: 5px;
 }
 main .resto .restnom:hover > .lovit {
   animation: heartcolor 2000ms forwards;
@@ -134,7 +253,23 @@ main .resto .food {
   margin-top: 10px;
   border-radius: 10px;
   font-size: 18px;
-  background-color: pink;
+  border: 1px black solid;
+}
+main .resto .food .platname {
+  color: grey;
+  font-size: 16px;
+}
+main .resto .food .platname::first-line {
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+}
+main .resto .food .price {
+  font-size: 17px;
+  font-weight: bold;
+}
+main .resto .food .price::first-line {
+  font-size: 16px;
 }
 main .resto .plats {
   box-sizing: border-box;
@@ -154,6 +289,63 @@ main .resto .plats .barre {
   width: 12%;
   height: 4px;
   background-color: #99E2D0;
+}
+main .resto .sucre {
+  box-sizing: border-box;
+  width: 100%;
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  padding-left: 10px;
+}
+main .resto .sucre .text {
+  height: 40px;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+main .resto .sucre .barre {
+  width: 12%;
+  height: 4px;
+  background-color: #99E2D0;
+}
+main .resto .order {
+  width: 100%;
+  height: fit-content;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+main .resto .order .commande {
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 25px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #FF79DA;
+  color: white;
+  padding: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+footer {
+  box-sizing: border-box;
+  width: 100%;
+  height: 220px;
+  background-color: black;
+  padding-top: 25px;
+  padding-left: 15px;
+}
+footer p {
+  color: white;
+  font-weight: bold;
+}
+footer .downlogoomf {
+  width: 30%;
+  height: 25px;
+  color: white;
+  filter: invert(100%);
 }
 
 /*# sourceMappingURL=style.css.map */
