@@ -21,7 +21,7 @@ h1, h2, h3, h4 {
 body {
   width: 50%;
   min-width: 375px;
-  max-width: 750px;
+  max-width: 500px;
   height: fit-content;
   margin-left: auto;
   margin-right: auto;
@@ -193,6 +193,27 @@ main .resto {
   min-height: 880px;
   border-radius: 25px 25px 0px 0px;
   background-color: white;
+  /*
+  @keyframes appearing {
+
+  	from{
+  		width: 0px;
+  		transform-origin: left;
+  	}
+  	to{
+  		width: 50px;
+  	}
+
+  }
+
+  @keyframes tune {
+  	from{
+  		width: initial;
+  	}
+  	to{
+  		width: -20px;
+  	}
+  }*/
 }
 main .resto .restnom {
   width: 100%;
@@ -241,35 +262,102 @@ main .resto .entrees .barre {
   height: 4px;
   background-color: #99E2D0;
 }
+@keyframes big {
+  from {
+    width: 100px;
+  }
+  to {
+    transform-origin: left;
+    width: 120px;
+  }
+}
+@keyframes resizing {
+  from {
+    min-width: 70%;
+  }
+  to {
+    min-width: 50%;
+  }
+}
+main .resto .food:hover {
+  /*
+   transform: translateX(200px);
+   */
+  /*
+   & > .boxes--prix{
+  	animation: tune 700ms forwards;
+  }
+  */
+}
+main .resto .food:hover > .food--resize {
+  animation: resizing 700ms forwards;
+  /*
+  transform: rotate(0deg);
+  */
+}
+main .resto .food:hover > .food--appears {
+  transform: translateX(0px);
+  transition: transform 700ms;
+}
+main .resto .food:hover > .food--appears > i {
+  transform: rotate(360deg);
+}
 main .resto .food {
   width: 95%;
-  height: 80px;
+  height: 70px;
+  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   margin-left: auto;
   margin-right: auto;
   padding-left: 5px;
-  padding-right: 5px;
+  padding-top: 15px;
   margin-top: 10px;
   border-radius: 10px;
   font-size: 18px;
   border: 1px black solid;
+  overflow: hidden;
 }
-main .resto .food .platname {
+main .resto .food--resize {
+  min-width: 75%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
   color: grey;
   font-size: 16px;
 }
-main .resto .food .platname::first-line {
+main .resto .food--resize::first-line {
   color: black;
   font-size: 18px;
   font-weight: bold;
 }
-main .resto .food .price {
+main .resto .food--move {
+  box-sizing: border-box;
+  min-width: 25%;
   font-size: 17px;
   font-weight: bold;
+  padding-right: 10px;
+  margin-right: 3px;
+  text-align: right;
 }
-main .resto .food .price::first-line {
+main .resto .food--move::first-line {
   font-size: 16px;
+}
+main .resto .food--appears {
+  box-sizing: border-box;
+  min-width: 60px;
+  height: 132%;
+  margin-top: -16px;
+  text-align: right;
+  background-color: #99E2D0;
+  font-size: 26px;
+  text-align: center;
+  padding-top: 21px;
+}
+main .resto .food--appears i {
+  transform: rotate(0deg);
+  transition: transform 500ms 200ms;
+  color: white;
 }
 main .resto .plats {
   box-sizing: border-box;
