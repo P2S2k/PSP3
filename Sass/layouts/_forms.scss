@@ -3,13 +3,13 @@
 
 body
 {
-    width: 50%;
+    
     min-width: 375px;
 	max-width: 500px;
     height: fit-content;
     margin-left: auto;
     margin-right: auto;
-	border: green 1px solid;
+	
 } 
 
 header
@@ -17,7 +17,7 @@ header
 	width: 100%;
 	.bandeau{
 		display: flex;
-		justify-content: space-between;
+		justify-content: space-around;
 		width: 100%;
 		height: 50px;
 		padding-top: 5px;
@@ -27,9 +27,8 @@ header
 			width: 25px;
 			height: 40px;
 			font-size: x-large;
-			background-color: transparent;
 			color: black;
-			padding-top: 8px;			
+			padding-top: 6px;			
 		}
 		.logoomf{
 			width: 200px;
@@ -74,7 +73,8 @@ header
 			border-radius: 25px;
 			font-size: 18px;
 			font-weight: bold;
-			background-color: $color-2 ;
+			background:$color-2;
+			
 			color: white;
 			padding-top: 8px;
 			text-align: center;
@@ -94,7 +94,6 @@ main{
 	flex-direction: column;
 	width: 100%;
 	height: fit-content;
-
 	.ccd{
 		width: 85%;
 		height: fit-content;
@@ -110,7 +109,7 @@ main{
 			min-width: 30px;
 			max-height: 30px;
 			border-radius: 15px;
-			background-color: $color-2;
+			background-color: $color-1;
 			text-align: center;
 			padding-top: 4px;
 			margin-right: -15px;
@@ -133,13 +132,16 @@ main{
 	.photoALF{
 		width: 100%;
 		height: 250px;
-		display: flex;
-		border: 1px black solid;
-		background: url(./images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
-		background-size: cover;
-        background-position: center;
+		display: flex; 
+		overflow: hidden;
         align-items: center;
-		margin-bottom: -17px;
+		padding-left: 3px;
+		margin-bottom: -19px;
+		.alfpic{
+			max-width: 99%;
+			height: auto;
+			vertical-align: middle;
+		}
 		}//*fin photoALF
 	.photoLNE{
 		width: 100%;
@@ -148,7 +150,7 @@ main{
 		border: 1px black solid;
 		overflow: hidden;
         align-items: center;
-		margin-bottom: -17px;
+		margin-bottom: -19px;
 		.lnepic{
 			max-width: 100%;
 			height: auto;
@@ -160,7 +162,7 @@ main{
 		height: 250px;
 		border: 1px black solid;
 		overflow: hidden;
-		margin-bottom: -17px;
+		margin-bottom: -19px;
 		.lpgpic{
 			
 			max-width: 100%;
@@ -173,7 +175,7 @@ main{
 		height: 250px;
 		border: 1px black solid;
 		overflow: hidden;
-		margin-bottom: -17px;
+		margin-bottom: -19px;
 		.ldspic{
 			
 			max-width: 100%;
@@ -181,11 +183,24 @@ main{
 			vertical-align: middle;
 		}
 	}
+
+	@keyframes heartcolor {
+
+		0%{
+			color: rgb(245, 232, 232);
+		}
+		100%{
+			
+			color: blue;
+		}
+		
+	}
 	.resto{
 		width: 100%;
 		min-height: 880px;
 		border-radius: 25px 25px 0px 0px;
-		background-color: white;
+		background-color: rgb(254, 252, 252);
+		border: blue 1px solid;
 
 		.restnom{
 			width: 100%;
@@ -204,25 +219,46 @@ main{
 				
 			}
 			
+			.nom:hover + .lovit i{
+				animation: heartcolor 5000ms forwards;
+				transform-origin: bottom;
+
+			}
+
+
 			.nom::first-letter {
 				text-transform: uppercase;
 			}
 
 			.lovit{
+				
+				box-sizing: border-box;
 				width: 30px;
 				height: 45px;
 				font-size: 28px ;
-				padding-top: 5px;
-			}
-			&:hover > .lovit{
-				animation: heartcolor 2000ms forwards;
+				padding-top: 1px;
+				color: rgb(234, 225, 225);
+				
 			}
 			
 
-		
-		
 		} //*fin de restnom
 
+		@keyframes fadein {
+			0% {
+				margin-top: 50px;
+				opacity:0;
+			}
+			
+			
+			100%{
+				opacity: 1;
+				margin-top: 15px;
+			}
+		}
+/*		.apparition{
+			animation: fadein 3s forwards;
+		}*/
 		.entrees{
 			box-sizing: border-box;
 			width: 100%;
@@ -231,6 +267,7 @@ main{
 			flex-direction: column;
 			margin-top: 20px;
 			padding-left: 10px;
+			
 			.text{
 				height: 40px;
 				font-size:18px ;
@@ -285,7 +322,7 @@ main{
 		}*/
 
 		.food {
-   
+			animation: fadein 2000ms ease-out forwards;
 			&:hover {
 				/*
 				 transform: translateX(200px);
@@ -325,10 +362,11 @@ main{
 			margin-right: auto;
 			padding-left: 5px;
 			padding-top: 15px;
-			margin-top: 10px;
+			margin-top: 15px;
 			border-radius: 10px;
+			background-color: white;
+			box-shadow: 3px 3px 3px 3px rgb(242, 236, 236);
 			font-size: 18px;
-			border: 1px black solid;
 			overflow: hidden;
 			&--resize{
 				min-width: 75%;
@@ -438,14 +476,14 @@ main{
 				border-radius: 25px;
 				font-size: 18px;
 				font-weight: bold;
-				background-color: $color-2 ;
+				background: linear-gradient($color-2 5%, $color-1);
+				
 				color: white;
 				padding: 10px;
 				padding-left: 30px;
 				padding-right: 30px;
 				}
 		}
-
 
 	}//*fin resto
 
@@ -462,6 +500,11 @@ padding-left: 15px;
 		color: white;
 		font-weight: bold;
 	}
+	& a{
+		text-decoration: none;
+		color: white;
+		font-weight: bold;
+	}
 .downlogoomf{
 	width:30%;
 	height: 25px;
@@ -473,6 +516,32 @@ padding-left: 15px;
 }
 
 
+//* PARTIE RESERVEE AUX TESTS
+.jauge {
+    width: 100px;
+    height: 200px;
+    display: block;
+    background-color: white;
+    position: relative;
+}
+.jauge-remplissage {
+    transition: all 0.3s linear 0s;
+    background-color: #33BEE5;
+    width: 100%;
+    height: 0;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+ 
+.jauge:hover .jauge-remplissage {
+    height: 100%;
+}
 
+
+
+
+
+//* FIN DE PARTIE TESTS
 
 
