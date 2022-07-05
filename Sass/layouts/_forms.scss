@@ -65,31 +65,37 @@ header
 			font-size: 16px ;
 			text-align: center;
 		}
-		.decouvre{
+		.discover{
 			box-sizing: border-box;
 			margin-top: 30px;
-			width: 50%;
+			width: 55%;
 			height: 40px;
 			margin-right: auto;
 			margin-left: auto;
 			border-radius: 25px;
 			font-size: 18px;
-			font-weight: bold;
-			background:$clr-2;
-			
-			color: white;
-			padding-top: 8px;
 			text-align: center;
+			padding-top: 6px;
+			font-weight: bold;
+			cursor: pointer;
+			background: linear-gradient($clr-2 5%, $clr-1);
+
 			.explore{
 				background-color: transparent;
 				border: 0;
 				color: white;
 				font-size: 16px;
+				font-weight: 600;
+				
 			}
-		}
+			
+		} 
+			 
+		
 	}
 		
 	}
+	
 
 main{
 	display: flex;
@@ -232,18 +238,18 @@ main{
 				
 			}
 			/*
-			.lovit {
+			.lovit i{
 				color: #FFF;
 				background-color: #000;
-				//*border-radius: 50%;
-				//*padding:.2em;
+				border-radius: 50%;
+				padding:.05em;
 			}
-			.lovit::before {
+			.lovit i::before {
 				content: "\f004";
 				font-weight: bold;
 				transition: color 1s ease-out;
 			}
-			.lovit:hover::before{
+			.lovit i:hover::before{
 				color: red;
 				cursor: pointer;
 			}
@@ -261,6 +267,7 @@ main{
 		
 
 		} //*fin de restnom
+		
 	.lovit{
 			
 		box-sizing: border-box;
@@ -268,17 +275,18 @@ main{
 		height: 45px;
 		font-size: 28px;
 		padding-top: 1px;
-		border: 1px red solid;
 		& i{
 			color: white;
-			text-shadow: 1px 2px 3px black;
+			
+			text-shadow: 1px 1px 4px $clr-1;
 		}
 		&:hover > i{
-			animation: heartcolor 2500ms forwards;
+			animation: heartcolor 3000ms forwards;
 		} 
 			
 			
 		}
+		
 
 		@keyframes fadein {
 			0% {
@@ -511,9 +519,8 @@ main{
 				margin-left: auto;
 				border-radius: 25px;
 				font-size: 18px;
-				font-weight: bold;
+				font-weight:600;
 				background: linear-gradient($clr-2 5%, $clr-1);
-				
 				color: white;
 				padding: 10px;
 				padding-left: 30px;
@@ -614,6 +621,24 @@ main{
             /*flex-direction: column;*/
             width:98%;
             height: 30%;
+
+			.lovit{
+			
+				box-sizing: border-box;
+				width: 30px;
+				height: 45px;
+				font-size: 26px;
+				padding-top: 1px;
+				& i{
+					color: white;
+					text-shadow: 1px 1px 4px black;
+				}
+				&:hover > i{
+					animation: heartcolor 3000ms forwards;
+				} 
+					
+					
+				}
         }
 		.restaux{
 			display: flex;

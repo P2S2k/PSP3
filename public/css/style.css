@@ -78,26 +78,27 @@ header .entete .text2 {
   font-size: 16px;
   text-align: center;
 }
-header .entete .decouvre {
+header .entete .discover {
   box-sizing: border-box;
   margin-top: 30px;
-  width: 50%;
+  width: 55%;
   height: 40px;
   margin-right: auto;
   margin-left: auto;
   border-radius: 25px;
   font-size: 18px;
-  font-weight: bold;
-  background: #FF79DA;
-  color: white;
-  padding-top: 8px;
   text-align: center;
+  padding-top: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  background: linear-gradient(#FF79DA 5%, #9356DC);
 }
-header .entete .decouvre .explore {
+header .entete .discover .explore {
   background-color: transparent;
   border: 0;
   color: white;
   font-size: 16px;
+  font-weight: 600;
 }
 
 main {
@@ -251,18 +252,18 @@ main .resto .restnom {
   padding-right: 15px;
   margin-top: 10px;
   /*
-  .lovit {
+  .lovit i{
   	color: #FFF;
   	background-color: #000;
-  	//*border-radius: 50%;
-  	//*padding:.2em;
+  	border-radius: 50%;
+  	padding:.05em;
   }
-  .lovit::before {
+  .lovit i::before {
   	content: "\f004";
   	font-weight: bold;
   	transition: color 1s ease-out;
   }
-  .lovit:hover::before{
+  .lovit i:hover::before{
   	color: red;
   	cursor: pointer;
   }
@@ -283,14 +284,13 @@ main .resto .lovit {
   height: 45px;
   font-size: 28px;
   padding-top: 1px;
-  border: 1px red solid;
 }
 main .resto .lovit i {
   color: white;
-  text-shadow: 1px 2px 3px black;
+  text-shadow: 1px 1px 4px #9356DC;
 }
 main .resto .lovit:hover > i {
-  animation: heartcolor 2500ms forwards;
+  animation: heartcolor 3000ms forwards;
 }
 @keyframes fadein {
   0% {
@@ -472,7 +472,7 @@ main .resto .order .commande {
   margin-left: auto;
   border-radius: 25px;
   font-size: 18px;
-  font-weight: bold;
+  font-weight: 600;
   background: linear-gradient(#FF79DA 5%, #9356DC);
   color: white;
   padding: 10px;
@@ -556,6 +556,20 @@ main .restolegend {
   /*flex-direction: column;*/
   width: 98%;
   height: 30%;
+}
+main .restolegend .lovit {
+  box-sizing: border-box;
+  width: 30px;
+  height: 45px;
+  font-size: 26px;
+  padding-top: 1px;
+}
+main .restolegend .lovit i {
+  color: white;
+  text-shadow: 1px 1px 4px black;
+}
+main .restolegend .lovit:hover > i {
+  animation: heartcolor 3000ms forwards;
 }
 main .restaux {
   display: flex;
