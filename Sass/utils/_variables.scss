@@ -1,6 +1,7 @@
-$color-1: #9356DC;
-$color-2: #FF79DA;
-$color-3: #99E2D0;
+$clr-1: #9356DC;
+$clr-2: #FF79DA;
+$clr-3: #99E2D0;
+$clr-12: ($clr-2 5%, $clr-1);
 
 body{
     font-family: 'roboto', sans-serif;
@@ -8,6 +9,7 @@ body{
 
 h1, h2, h3, h4{
     font-family: 'shrikhand';
+
 }
 
 

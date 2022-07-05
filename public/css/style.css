@@ -20,7 +20,7 @@ h1, h2, h3, h4 {
 }
 body {
   min-width: 375px;
-  max-width: 500px;
+  max-width: 420px;
   height: fit-content;
   margin-left: auto;
   margin-right: auto;
@@ -35,6 +35,7 @@ header .bandeau {
   width: 100%;
   height: 50px;
   padding-top: 5px;
+  background-color: #f8f8f8;
 }
 header .bandeau .arrow, header .bandeau .right {
   box-sizing: border-box;
@@ -51,6 +52,7 @@ header .bandeau .logoomf {
 header .entete {
   width: 100%;
   height: 250px;
+  background-color: #f8f8f8;
 }
 header .entete .localisation {
   width: 100%;
@@ -104,17 +106,24 @@ main {
   width: 100%;
   height: fit-content;
 }
+main .fct {
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: 25px;
+}
 main .ccd {
-  width: 85%;
+  width: 100%;
   height: fit-content;
   display: flex;
-  margin-right: auto;
-  margin-left: auto;
+  margin-right: 2%;
+  margin-left: 3%;
   margin-bottom: 30px;
   vertical-align: middle;
 }
 main .ccd .num {
   box-sizing: border-box;
+  font-size: 15px;
+  font-weight: 550;
   color: black;
   min-width: 30px;
   max-height: 30px;
@@ -129,12 +138,17 @@ main .ccd .choirest {
   box-sizing: border-box;
   width: 90%;
   height: 60px;
-  background-color: rgb(243, 236, 236);
+  background-color: #f8f8f8;
+  box-shadow: 3px 3px 3px 3px #ebebeb;
   text-align: center;
   padding-top: 20px;
   margin-top: 0px;
-  border-radius: 12px;
+  border-radius: 18px;
+  font-weight: bold;
   float: left;
+}
+main .ccd .choirest i {
+  color: #9356DC;
 }
 main .photoALF {
   width: 100%;
@@ -165,9 +179,8 @@ main .photoLNE .lnepic {
   vertical-align: middle;
 }
 main .photoLPG {
-  width: 100%;
+  width: 99%;
   height: 250px;
-  border: 1px black solid;
   overflow: hidden;
   margin-bottom: -19px;
 }
@@ -190,18 +203,19 @@ main .photoLDS .ldspic {
 }
 @keyframes heartcolor {
   0% {
-    color: rgb(245, 232, 232);
+    color: white;
+    cursor: pointer;
   }
   100% {
-    color: blue;
+    color: #9356DC;
+    cursor: pointer;
   }
 }
 main .resto {
   width: 100%;
   min-height: 880px;
   border-radius: 25px 25px 0px 0px;
-  background-color: rgb(254, 252, 252);
-  border: blue 1px solid;
+  background-color: #f8f8f8;
   /*		.apparition{
   			animation: fadein 3s forwards;
   		}*/
@@ -233,9 +247,26 @@ main .resto .restnom {
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
   margin-top: 10px;
+  /*
+  .lovit {
+  	color: #FFF;
+  	background-color: #000;
+  	//*border-radius: 50%;
+  	//*padding:.2em;
+  }
+  .lovit::before {
+  	content: "\f004";
+  	font-weight: bold;
+  	transition: color 1s ease-out;
+  }
+  .lovit:hover::before{
+  	color: red;
+  	cursor: pointer;
+  }
+  */
 }
 main .resto .restnom .nom {
   width: 85%;
@@ -243,20 +274,23 @@ main .resto .restnom .nom {
   font-family: "shrikhand", cursive;
   font-size: 28px;
 }
-main .resto .restnom .nom:hover + .lovit i {
-  animation: heartcolor 5000ms forwards;
-  transform-origin: bottom;
-}
 main .resto .restnom .nom::first-letter {
   text-transform: uppercase;
 }
-main .resto .restnom .lovit {
+main .resto .lovit {
   box-sizing: border-box;
   width: 30px;
   height: 45px;
   font-size: 28px;
   padding-top: 1px;
-  color: rgb(234, 225, 225);
+  border: 1px red solid;
+}
+main .resto .lovit i {
+  color: white;
+  text-shadow: 1px 2px 3px black;
+}
+main .resto .lovit:hover > i {
+  animation: heartcolor 2500ms forwards;
 }
 @keyframes fadein {
   0% {
@@ -444,6 +478,111 @@ main .resto .order .commande {
   padding: 10px;
   padding-left: 30px;
   padding-right: 30px;
+}
+main .lesrestos {
+  width: 100%;
+  height: fit-content;
+  background-color: #f8f8f8;
+  padding-bottom: 30px;
+}
+main .lesrestos .rsts {
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: 25px;
+}
+main .restostick {
+  width: 85%;
+  height: 240px;
+  min-width: 170px;
+  min-height: 150px;
+  background-color: white;
+  border-radius: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 3px 3px 3px 3px;
+  margin-bottom: 15px;
+  box-shadow: 3px 3px 3px 3px rgb(242, 236, 236);
+  text-decoration: none;
+}
+main .restostick :link {
+  text-decoration: none;
+}
+main .LNE-pic {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+  height: 72%;
+  min-height: 90px;
+  margin-bottom: 3px;
+  border-radius: 10px 10px 0 0;
+}
+main .LNE-pic img {
+  max-width: 100%;
+  height: auto;
+  bottom: 0;
+}
+main .LPG-pic, main .ALF-pic, main .DDS-pic {
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  width: 100%;
+  height: 70%;
+  min-height: 90px;
+  margin-bottom: 3px;
+  border-radius: 10px 10px 0 0;
+}
+main .new {
+  width: 90px;
+  height: 25px;
+  background-color: #99E2D0;
+  color: #278870;
+  margin-left: -100px;
+  margin-bottom: 125px;
+  border-radius: 5px;
+  text-align: center;
+  padding-top: 4px;
+}
+main img {
+  max-width: 100%;
+  height: auto;
+  bottom: 0;
+}
+main .restolegend {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 12px;
+  font-size: 18px;
+  /*flex-direction: column;*/
+  width: 98%;
+  height: 30%;
+}
+main .restaux {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  height: 80%;
+  font-size: 20px;
+  padding-left: 2%;
+}
+main .restaux .restotxt {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 35%;
+  margin-bottom: 0;
+  /* font-size: 15px;*/
+  color: black;
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 1% 1% 1% 1%;
+}
+main .restaux .restotxt::first-letter {
+  text-transform: uppercase;
+}
+main .restaux .rstxt2 {
+  width: 100%;
+  height: 35%;
+  color: grey;
 }
 
 footer {
