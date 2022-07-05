@@ -5,3 +5,8 @@
 
 
 }
+
+@mixin spin {
+    background: linear-gradient($clr-2 5%, $clr-3);
+    opacity: 1;
+}

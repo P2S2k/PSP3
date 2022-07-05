@@ -18,12 +18,77 @@ h1, h2, h3, h4 {
   font-family: Awesome;
   src: url("https://kit.fontawesome.com/a32a00cd06.js");
 }
+@keyframes big {
+  from {
+    width: 100px;
+  }
+  to {
+    transform-origin: left;
+    width: 120px;
+  }
+}
+@keyframes resizing {
+  from {
+    min-width: 70%;
+  }
+  to {
+    min-width: 50%;
+  }
+}
+@keyframes spinner {
+  0% {
+    opacity: 0;
+    cursor: wait;
+  }
+  25% {
+    opacity: 0.25;
+    cursor: wait;
+  }
+  50% {
+    opacity: 0.5;
+    cursor: wait;
+  }
+  75% {
+    opacity: 0.75;
+    cursor: wait;
+  }
+  100% {
+    opacity: 1;
+    cursor: default;
+  }
+}
+@keyframes heartcolor {
+  0% {
+    color: white;
+    cursor: pointer;
+  }
+  100% {
+    color: #9356DC;
+    cursor: default;
+  }
+}
+@keyframes fadein {
+  0% {
+    margin-top: 50px;
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    margin-top: 15px;
+  }
+}
 body {
   min-width: 375px;
   max-width: 420px;
   height: fit-content;
   margin-left: auto;
   margin-right: auto;
+}
+
+.spinload {
+  width: 100%;
+  height: fit-content;
+  animation: spinner 3s ease-in forwards;
 }
 
 header {
@@ -121,6 +186,13 @@ main .ccd {
   margin-bottom: 30px;
   vertical-align: middle;
 }
+main .ccd:hover {
+  opacity: 0.6;
+}
+main .ccd:hover .choirest {
+  cursor: pointer;
+  box-shadow: 5px 5px 5px 5px #b3b3b3;
+}
 main .ccd .num {
   box-sizing: border-box;
   font-size: 15px;
@@ -202,16 +274,6 @@ main .photoLDS .ldspic {
   height: auto;
   vertical-align: middle;
 }
-@keyframes heartcolor {
-  0% {
-    color: white;
-    cursor: pointer;
-  }
-  100% {
-    color: #9356DC;
-    cursor: pointer;
-  }
-}
 main .resto {
   width: 100%;
   min-height: 880px;
@@ -220,27 +282,6 @@ main .resto {
   /*		.apparition{
   			animation: fadein 3s forwards;
   		}*/
-  /*
-  @keyframes appearing {
-
-  	from{
-  		width: 0px;
-  		transform-origin: left;
-  	}
-  	to{
-  		width: 50px;
-  	}
-
-  }
-
-  @keyframes tune {
-  	from{
-  		width: initial;
-  	}
-  	to{
-  		width: -20px;
-  	}
-  }*/
 }
 main .resto .restnom {
   width: 100%;
@@ -292,16 +333,6 @@ main .resto .lovit i {
 main .resto .lovit:hover > i {
   animation: heartcolor 3000ms forwards;
 }
-@keyframes fadein {
-  0% {
-    margin-top: 50px;
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-    margin-top: 15px;
-  }
-}
 main .resto .entrees {
   box-sizing: border-box;
   width: 100%;
@@ -321,23 +352,6 @@ main .resto .entrees .barre {
   height: 4px;
   background-color: #99E2D0;
 }
-@keyframes big {
-  from {
-    width: 100px;
-  }
-  to {
-    transform-origin: left;
-    width: 120px;
-  }
-}
-@keyframes resizing {
-  from {
-    min-width: 70%;
-  }
-  to {
-    min-width: 50%;
-  }
-}
 main .resto .food {
   animation: fadein 2000ms ease-out forwards;
 }
@@ -353,9 +367,6 @@ main .resto .food:hover {
 }
 main .resto .food:hover > .food--resize {
   animation: resizing 700ms forwards;
-  /*
-  transform: rotate(0deg);
-  */
 }
 main .resto .food:hover > .food--appears {
   transform: translateX(0px);
@@ -553,7 +564,6 @@ main .restolegend {
   justify-content: space-between;
   padding-top: 12px;
   font-size: 18px;
-  /*flex-direction: column;*/
   width: 98%;
   height: 30%;
 }
