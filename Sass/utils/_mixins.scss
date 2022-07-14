@@ -2,11 +2,46 @@
     width: 220px;
     height: 50px;
     vertical-align: middle;
-
-
 }
 
 @mixin spin {
     background: linear-gradient($clr-2 5%, $clr-3);
     opacity: 1;
+}
+
+@mixin category{
+    box-sizing: border-box;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    padding-left: 10px;
+}
+
+@mixin catext {
+    height: 40px;
+    font-size:18px ;
+    text-transform: uppercase;
+}
+
+@mixin catbarre {
+    width: 12%;
+    height: 4px;
+    background-color:$clr-3 ;
+}
+@mixin cadrephoto{
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    margin-bottom: -19px;
+}
+@mixin photo {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+@mixin mrglr-auto{
+    margin-left: auto;
+    margin-right: auto;
 }

@@ -1,14 +1,6 @@
 
-@keyframes big {
-    from{
-        width: 100px;
-    }
-    to{
-        transform-origin: left;
-        width: 120px;
-    }
-}
-
+//* @media screen and (max-width: 420px){
+	
 @keyframes resizing {
     from{
         min-width: 70%;
@@ -17,7 +9,6 @@
         min-width: 50%;
     }
 }
-
 @keyframes spinner {
     0%{
         opacity: 0;
@@ -37,12 +28,12 @@
     }
     100%{
         opacity: 1;
-        cursor:default ;
+        cursor:pointer ;
     }
 }
 @keyframes heartcolor {
     0%{
-        color: white;
+        color: $clr-w;
         cursor: pointer;
     }
     100%{
@@ -53,31 +44,30 @@
 }
 @keyframes fadein {
     0% {
-        margin-top: 50px;
+        padding-top: 50px;
         opacity:0;
     }
     100%{
         opacity: 1;
-        margin-top: 15px;
+        padding-top: 15px;
     }
 }
 
+//******************BODY ET SON CONTENU********************************
+
 body
 {
-    
+    max-width: 420px;
     min-width: 375px;
-	max-width: 420px;
     height: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-	
+	@include mrglr-auto;
 } 
 .spinload {
 	width: 100%;
 	height: fit-content;
 	animation: spinner 3s ease-in forwards;
 }
-
+//********************HEADER ET SON CONTENU*********************************
 header
 {
 	width: 100%;
@@ -87,47 +77,60 @@ header
 		width: 100%;
 		height: 50px;
 		padding-top: 5px;
-		background-color: lighten($color: grey, $amount: 47%);
-
+		background-color: lighten($color: $clr-4, $amount: 47%);
 		.arrow, .right{
 			box-sizing: border-box;
 			width: 25px;
 			height: 40px;
 			font-size: x-large;
-			color: black;
+			color: $clr-b;
 			padding-top: 6px;			
 		}
 		.logoomf{
 			width: 200px;
 			height: 40px;
 		}
-	}
+	} 
 	.entete{
 		width: 100%;
 		height: 250px;
-		background-color: lighten($color: grey, $amount: 47%);
-		
+		background-color: lighten($color: $clr-4, $amount: 47%);
 		.localisation{
 			width: 100%;
 			height: 40px;
 			box-sizing: border-box;
-			font-size: 16px;
+			font-size: 24px;
 			background-color: rgb(208, 203, 203) ;
-			padding-top: 10px;
-			text-align: center;
+			padding-top: 5px;
+			& i{
+				width: 30%;
+				text-align: right;
+			}
+			.ville{
+				width: 60%;
+				margin-bottom: 10px;
+				text-decoration: none;
+				font-size: 18px;
+				margin-right: 5px;
+				margin-left: 5px;
+				background-color: transparent;
+				border: none;
+				padding-left: 10px;
+				&:focus{
+					outline: none;
+				}
+			}
 		}
 		.text1{
 			width:70% ;
-			margin-right: auto;
-			margin-left: auto;
+			@include mrglr-auto;
 			font-size: 20px ;
 			font-weight: bold;
 			text-align: center;
 		}
 		.text2{
 			width:85% ;
-			margin-right: auto;
-			margin-left: auto;
+			@include mrglr-auto;
 			font-size: 16px ;
 			text-align: center;
 		}
@@ -136,33 +139,29 @@ header
 			margin-top: 30px;
 			width: 55%;
 			height: 40px;
-			margin-right: auto;
-			margin-left: auto;
+			@include mrglr-auto;
 			border-radius: 25px;
 			font-size: 18px;
 			text-align: center;
 			padding-top: 6px;
 			font-weight: bold;
-			cursor: pointer;
 			background: linear-gradient($clr-2 5%, $clr-1);
-
+			&:hover {
+				opacity: .6;
+				box-shadow: 5px, $clr-b;
+			}
 			.explore{
 				background-color: transparent;
 				border: 0;
-				color: white;
+				color: $clr-w;
 				font-size: 16px;
 				font-weight: 600;
-				
 			}
-			
 		} 
-			 
-		
-	}
-		
+	}	
 	}
 	
-
+//**************************MAIN ET SON CONTENU*****************************************
 main{
 	display: flex;
 	flex-direction: column;
@@ -180,20 +179,17 @@ main{
 		margin-right: 2%;
 		margin-left: 3%;
 		margin-bottom: 30px;
-		vertical-align: middle;
-		
 		&:hover{ 
 			opacity: .6;
 			.choirest {
-			cursor: pointer;
-			box-shadow: 5px 5px 5px 5px lighten($color: grey, $amount: 20%);
+				box-shadow: 5px 5px 5px 5px lighten($color: $clr-4, $amount: 20%);
 					}
 		}
 		.num{
 			box-sizing: border-box;
 			font-size: 15px;
 			font-weight: 550;
-			color: black;
+			color: $clr-b;
 			min-width: 30px;
 			max-height: 30px;
 			border-radius: 15px;
@@ -201,14 +197,14 @@ main{
 			text-align: center;
 			padding-top: 4px;
 			margin-right: -15px;
-			color: white;
+			color: $clr-w;
 		}
 		.choirest{
 			box-sizing: border-box;
 			width: 90%;
 			height: 60px;
-			background-color: lighten($color: grey, $amount: 47%);
-			box-shadow: 3px 3px 3px 3px lighten($color: grey, $amount: 42%);
+			background-color: lighten($color: $clr-4, $amount: 47%);
+			box-shadow: 3px 3px 3px 3px lighten($color: $clr-4, $amount: 42%);
 			text-align: center;
 			padding-top: 20px;
 			margin-top: 0px;
@@ -218,337 +214,12 @@ main{
 			& i{
 				color: $clr-1;
 			}
-			
-	
-			}
-		
-		
-	}
-
-	.photoALF{
-		width: 100%;
-		height: 250px;
-		display: flex; 
-		overflow: hidden;
-        align-items: center;
-		padding-left: 3px;
-		margin-bottom: -19px;
-		.alfpic{
-			max-width: 99%;
-			height: auto;
-			vertical-align: middle;
-		}
-		}//*fin photoALF
-	.photoLNE{
-		width: 100%;
-		height: 250px;
-		display: flex; 
-		border: 1px black solid;
-		overflow: hidden;
-        align-items: center;
-		margin-bottom: -19px;
-		.lnepic{
-			max-width: 100%;
-			height: auto;
-			vertical-align: middle;
 		}
 	}
-	.photoLPG{
-		width: 99%;
-		height: 250px;
-		overflow: hidden;
-		margin-bottom: -19px;
-		.lpgpic{
-			
-			max-width: 100%;
-			height: auto;
-			vertical-align: middle;
-		}
-	}
-	.photoLDS{
-		width: 100%;
-		height: 250px;
-		border: 1px black solid;
-		overflow: hidden;
-		margin-bottom: -19px;
-		.ldspic{
-			
-			max-width: 100%;
-			height: auto;
-			vertical-align: middle;
-		}
-	}
-
-	
-	.resto{
-		width: 100%;
-		min-height: 880px;
-		border-radius: 25px 25px 0px 0px;
-		background-color: lighten($color: grey, $amount: 47%);
-
-		.restnom{
-			width: 100%;
-			height: 50px;
-			box-sizing: border-box;
-			display: flex;
-			justify-content: space-between;
-			padding-left: 15px;
-			padding-right: 15px;
-			margin-top: 10px;
-			.nom{
-				width: 85%;
-				height: 45px;
-				font-family: "shrikhand", cursive;
-				font-size: 28px;
-				
-			}
-			/*
-			.lovit i{
-				color: #FFF;
-				background-color: #000;
-				border-radius: 50%;
-				padding:.05em;
-			}
-			.lovit i::before {
-				content: "\f004";
-				font-weight: bold;
-				transition: color 1s ease-out;
-			}
-			.lovit i:hover::before{
-				color: red;
-				cursor: pointer;
-			}
-			*/
-			
-		
-
-			
-			.nom::first-letter {
-				text-transform: uppercase;
-			}
-			
-			
-			
-		
-
-		} //*fin de restnom
-		
-	.lovit{
-			
-		box-sizing: border-box;
-		width: 30px;
-		height: 45px;
-		font-size: 28px;
-		padding-top: 1px;
-		& i{
-			color: white;
-			
-			text-shadow: 1px 1px 4px $clr-1;
-		}
-		&:hover > i{
-			animation: heartcolor 3000ms forwards;
-		} 
-			
-			
-		}
-		
-
-		
-/*		.apparition{
-			animation: fadein 3s forwards;
-		}*/
-		.entrees{
-			box-sizing: border-box;
-			width: 100%;
-			height: 30px;
-			display: flex;
-			flex-direction: column;
-			margin-top: 20px;
-			padding-left: 10px;
-			
-			.text{
-				height: 40px;
-				font-size:18px ;
-				text-transform: uppercase;
-			}//*fin text
-			.barre{
-				width: 12%;
-				height: 4px;
-				background-color:$clr-3 ;
-			}//*fin barre
-		} //*fin entrees
-		
-		
-		
-	
-		.food {
-			animation: fadein 2000ms ease-out forwards;
-			&:hover {
-				/*
-				 transform: translateX(200px);
-				 */
-				& > .food--resize {
-					animation: resizing 700ms forwards;
-				}
-				& > .food--appears {
-					
-					transform: translateX(0px);
-					transition: transform 700ms;
-
-					 & > i{
-						transform: rotate(360deg);
-					}
-				}
-				/*
-				 & > .boxes--prix{
-					animation: tune 700ms forwards;
-				}
-				*/
-			}
-		}
-
-
-
-		.food{
-			width: 95%;
-			height: 70px;
-			box-sizing: border-box;
-			display: flex;
-			justify-content: space-between;
-			margin-left: auto;
-			margin-right: auto;
-			padding-left: 5px;
-			padding-top: 15px;
-			margin-top: 15px;
-			border-radius: 10px;
-			background-color: white;
-			box-shadow: 3px 3px 3px 3px rgb(242, 236, 236);
-			font-size: 18px;
-			overflow: hidden;
-			&--resize{
-				min-width: 75%;
-				text-overflow: ellipsis;
-				overflow: hidden;
-				white-space: nowrap;
-				color: grey;
-				font-size: 16px;
-			&::first-line{
-				color: black;
-				font-size: 18px;
-				font-weight: bold;
-
-			}//* fin firstline
-			
-			}//*fin platname
-			&--move{
-				box-sizing: border-box;
-				min-width: 25%;
-				font-size: 17px;
-				font-weight: bold;
-				padding-right: 10px;
-				margin-right: 3px;
-				text-align: right;
-				&::first-line{
-					font-size: 16px;
-				}
-				
-			}
-			&--appears{
-				box-sizing: border-box;
-				min-width: 60px;
-				height: 132%;
-				margin-top: -16px;
-				text-align: right;
-				background-color: $clr-3;
-				font-size: 26px;
-				text-align: center;
-				padding-top: 21px;
-				& i{
-					
-					transform: rotate(0deg);
-					transition: transform 500ms 200ms;
-					color: white;
-					
-				}
-				
-			}
-			}//*fin food
-
-
-
-
-
-
-		.plats{
-			box-sizing: border-box;
-			width: 100%;
-			height: 30px;
-			display: flex;
-			flex-direction: column;
-			margin-top: 20px;
-			padding-left: 10px;
-			.text{
-				height: 40px;
-				font-size:18px ;
-				text-transform: uppercase;
-			}//*fin text
-			.barre{
-				width: 12%;
-				height: 4px;
-				background-color:$clr-3 ;
-			}//*fin barre
-		}//*fin plats
-		.sucre{
-			box-sizing: border-box;
-			width: 100%;
-			height: 30px;
-			display: flex;
-			flex-direction: column;
-			margin-top: 20px;
-			padding-left: 10px;
-			.text{
-				height: 40px;
-				font-size:18px ;
-				text-transform: uppercase;
-			}//*fin text
-			.barre{
-				width: 12%;
-				height: 4px;
-				background-color:$clr-3 ;
-			}//*fin barre
-		}//*fin sucre
-
-		.order{
-			width: 100%;
-			height: fit-content;
-			text-align: center;
-			margin-top: 40px;
-			margin-bottom: 40px;
-			
-
-
-			.commande{
-				margin-right: auto;
-				margin-left: auto;
-				border-radius: 25px;
-				font-size: 18px;
-				font-weight:600;
-				background: linear-gradient($clr-2 5%, $clr-1);
-				color: white;
-				padding: 10px;
-				padding-left: 30px;
-				padding-right: 30px;
-				}
-		}
-
-	}//*fin resto
-
-	//* page accueil
-
 	.lesrestos{
 		width: 100%;
 		height: fit-content;
-		background-color: lighten($color: grey, $amount: 47%);
+		background-color: lighten($color: $clr-4, $amount: 47%);
 		padding-bottom: 30px;
 		.rsts{
 			font-size: 24px;
@@ -562,15 +233,19 @@ main{
             height: 240px;
             min-width: 170px;
             min-height: 150px;
-            background-color: white;
+            background-color: $clr-w;
             border-radius: 15px;
-			margin-left: auto;
-			margin-right: auto;
+			@include mrglr-auto;
             padding: 3px 3px 3px 3px;
             margin-bottom: 15px;
 			box-shadow:3px 3px 3px 3px rgb(242, 236, 236);
             text-decoration: none;
-
+			.restolink{
+				width: 100%;
+				height: 95%;
+				margin-top: -15px;
+				cursor:inherit;
+			}
         }
         .restostick :link
         {
@@ -592,9 +267,6 @@ main{
 				bottom: 0;
 			}
         }
-       
-
-		//*test insert
 		.LPG-pic, .ALF-pic, .DDS-pic
         {
             display: flex;
@@ -623,8 +295,20 @@ main{
             height: auto;
             bottom: 0;
         }
-//*************************************************************************************
-
+		.lovit{
+			box-sizing: border-box;
+			width: 30px;
+			height: 45px;
+			font-size: 26px;
+			padding-top: 1px;
+			& i{
+				color: $clr-w;
+				text-shadow: 1px 1px 4px $clr-b;
+			}
+			&:hover > i{
+				animation: heartcolor 3000ms ease-in-out forwards;
+			} 
+			}  
         .restolegend
         {
             display: flex;
@@ -633,114 +317,230 @@ main{
 			font-size: 18px;
             width:98%;
             height: 30%;
-
-			.lovit{
-			
-				box-sizing: border-box;
-				width: 30px;
-				height: 45px;
-				font-size: 26px;
-				padding-top: 1px;
-				& i{
-					color: white;
-					text-shadow: 1px 1px 4px black;
-				}
-				&:hover > i{
-					animation: heartcolor 3000ms forwards;
-				} 
-					
-					
-				}
         }
 		.restaux{
 			display: flex;
 			flex-direction: column;
-			width: 60%;
+			width: 65%;
 			height: 80%;
 			font-size: 20px;
 			padding-left: 2%;
-
-		
-        & .restotxt
-        {
-            box-sizing: border-box;
-            width: 100%;
-            min-height: 35%;
-            margin-bottom: 0;
-           /* font-size: 15px;*/
-            color: black;
-			font-weight: bold;
-            border-radius: 10px;
-            padding: 1% 1% 1% 1%;
-			&::first-letter{
-				text-transform: uppercase;
+			padding-top: 15px;
+			& .restotxt
+			{
+				box-sizing: border-box;
+				width: 100%;
+				min-height: 35%;
+				margin-bottom: 0;
+				color: $clr-b;
+				font-weight: bold;
+				border-radius: 10px;
+				padding: 1% 1% 1% 1%;
+				&::first-letter{
+					text-transform: uppercase;
+				}
+			}
+			& .rstxt2{
+				width: 100%;
+				height: 35%;
+				color: $clr-4;
 			}
 		}
-		& .rstxt2{
-			width: 100%;
-			height: 35%;
-			color: grey;
-		
+	.photoALF{
+		@include cadrephoto;
+		.alfpic{
+			@include photo;
 		}
-        
-
 	}
-
-}//*fin main
-
+	.photoLPG{
+		@include cadrephoto;
+		.lpgpic{
+			@include photo;
+		}
+	}
+	.photoLDS{
+		@include cadrephoto;
+		.ldspic{
+			@include photo;
+		}
+	}
+	.photoLNE{
+		width: 100%;
+		height: 250px;
+		display: flex; 
+		overflow: hidden;
+        align-items: center;
+		margin-bottom: -19px;
+		.lnepic{
+			@include photo;
+		}
+	}
+	.resto{
+		width: 100%;
+		min-height: 880px;
+		border-radius: 25px 25px 0px 0px;
+		background-color: lighten($color: $clr-4, $amount: 47%);
+		.restnom{
+			width: 100%;
+			height: 50px;
+			box-sizing: border-box;
+			display: flex;
+			justify-content: space-between;
+			padding-left: 15px;
+			padding-right: 15px;
+			margin-top: 10px;
+			.nom{
+				width: 85%;
+				height: 45px;
+				font-family: "shrikhand", cursive;
+				font-size: 28px;
+				&::first-letter {
+				text-transform: uppercase;
+				}
+			}
+		}
+		.entrees{
+			@include category;
+			.text{
+				@include catext;
+			}
+			.barre{
+				@include catbarre;
+			}
+		}
+		.food {
+			animation: fadein 2500ms ease-out forwards;
+			&:hover {
+				& > .food--resize {
+					animation: resizing 800ms forwards;
+				}
+				& > .food--appears {
+					transform: translateX(0px);
+					transition: transform 800ms;
+					 & > i{
+						transform: rotate(360deg);
+						transition: transform 800ms;
+					}
+				}
+			}
+		}
+		.food{
+			width: 95%;
+			height: 70px;
+			box-sizing: border-box;
+			display: flex;
+			justify-content: space-between;
+			@include mrglr-auto;
+			padding-left: 5px;
+			padding-top: 15px;
+			margin-top: 15px;
+			border-radius: 10px;
+			background-color: $clr-w;
+			box-shadow: 3px 3px 3px 3px rgb(242, 236, 236);
+			overflow: hidden;
+			&--resize{
+				min-width: 80%;
+				text-overflow: ellipsis;
+				overflow: hidden;
+				white-space: nowrap;
+				color: $clr-4;
+				font-size: 16px;
+			&::first-line{
+				color: $clr-b;
+				font-size: 18px;
+				font-weight: bold;
+			}
+			}
+			&--move{
+				box-sizing: border-box;
+				min-width: 20%;
+				font-size: 17px;
+				font-weight: bold;
+				padding-right: 10px;
+				margin-right: 3px;
+				text-align: right;
+				&::first-line{
+					font-size: 16px;
+				}	
+			}
+			&--appears{
+				box-sizing: border-box;
+				min-width: 60px;
+				height: 132%;
+				margin-top: -16px;
+				text-align: right;
+				background-color: $clr-3;
+				font-size: 26px;
+				text-align: center;
+				padding-top: 21px;
+				& i{
+					transform: rotate(0deg);
+					transition: transform 500ms 200ms;
+					color: $clr-w;
+				}
+			}
+			}
+		.plats{
+			@include category;
+			.text{
+				@include catext;
+			}
+			.barre{
+				@include catbarre;
+			}
+		}
+		.sucre{
+			@include category;
+			.text{
+				@include catext;
+			}
+			.barre{
+				@include catbarre;
+			}
+		}
+		.order{
+			width: 100%;
+			height: fit-content;
+			text-align: center;
+			margin-top: 40px;
+			margin-bottom: 40px;
+			.commande{
+				@include mrglr-auto;
+				border-radius: 25px;
+				font-size: 18px;
+				font-weight:600;
+				background: linear-gradient($clr-2 5%, $clr-1);
+				color: $clr-w;
+				padding: 10px;
+				padding-left: 30px;
+				padding-right: 30px;
+				}
+		}
+	}
+}
 footer{
 	box-sizing: border-box;
-width: 100%;
-height: 220px;
-background-color: black;
-padding-top: 25px;
-padding-left: 15px;
+	width: 100%;
+	height: 220px;
+	background-color: $clr-b;
+	padding-top: 25px;
+	padding-left: 15px;
 	& p{
-		color: white;
+		color: $clr-w;
 		font-weight: bold;
 	}
 	& a{
 		text-decoration: none;
-		color: white;
+		color: $clr-w;
 		font-weight: bold;
 	}
 .downlogoomf{
 	width:30%;
 	height: 25px;
-	color: white;
+	color: $clr-w;
 	filter: invert(100%);
 }
-
-
 }
 
-
-//* PARTIE RESERVEE AUX TESTS
-.jauge {
-    width: 100px;
-    height: 200px;
-    display: block;
-    background-color: white;
-    position: relative;
-}
-.jauge-remplissage {
-    transition: all 0.3s linear 0s;
-    background-color: #33BEE5;
-    width: 100%;
-    height: 0;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-}
- 
-.jauge:hover .jauge-remplissage {
-    height: 100%;
-}
-
-
-
-
-
-//* FIN DE PARTIE TESTS
 
 

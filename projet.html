@@ -4,7 +4,13 @@
         <meta charset="utf-8" />
 
         <title>Projet</title>
+
         <link rel="stylesheet" href="./public/css/style.css">
+        <!--
+        <link rel="stylesheet" media="screen and (max-width: 420px)" href="./public/css/style.css">
+        <link rel="stylesheet" media="screen and (max-width: 900px)" href="./public/css/style.css">
+        <link rel="stylesheet" media="screen and (max-width: 1400px)" href="./public/css/style.css">
+        -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
@@ -23,7 +29,13 @@
         </div>
         
         <div class="entete">
+            <div class="localisation">
+                <i class="fa-solid fa-location-dot"></i>
+                <input type="text" class="ville" placeholder="Localisation">
+            </div>
+            <!--
             <div class="localisation"><i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp;Paris, Belleville</div>
+            -->
             <p class="text1">Réservez le menu qui <br> vous convient</p>
             <p class="text2">Découvrez des restaurants d'exception,<br> sélectionnés par nos soins</p>
             <div class="discover">
@@ -52,67 +64,71 @@
         <div class="lesrestos">
             <p class="rsts">Restaurants</p>
             <div class="restostick" >
-                <a href="./projet4.html">
+                <a class="restolink" href="./projet4.html">
                     <div class="LPG-pic">
                         <img src="./public/css/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="LPG">
                         <span class="new">Nouveau</span>
                     </div>
-                </a>
+                
                 <div class="restolegend">
                     <div class="restaux">
                         <span class="restotxt">la palette du goût</span>
                         <span class="rstxt2">Ménilmontant</span>
                     </div>
+                </a>   
                     <span class="lovit"><i class="fa-solid fa-heart"></i></span>
                 </div>
                 
             </div>
 
             <div class="restostick" >
-                <a href="./projet3.html">
+                <a class="restolink" href="./projet3.html">
                     <div class="LNE-pic">
                         <img src="./public/css/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="LNE">
                         <span class="new">Nouveau</span>
                     </div>
-                </a>
+                
                 <div class="restolegend">
                     <div class="restaux">
                         <span class="restotxt">la note enchantée</span>
                         <span class="rstxt2">Charonne</span>
                     </div>
+                </a>
                     <span class="lovit"><i class="fa-solid fa-heart"></i></span>
                 </div>
                 
             </div>
 
             <div class="restostick" >
-                <a href="./projet2.html">
+                <a class="restolink" href="./projet2.html">
                     <div class="ALF-pic">
                         <img src="./public/css/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="LPG">
                     </div>
-                </a>
+                
 
                 <div class="restolegend">
                     <div class="restaux">
                         <span class="restotxt">à la Française</span>
                         <span class="rstxt2">Cité rouge</span>
                     </div>
+                </a>
                     <span class="lovit"><i class="fa-solid fa-heart"></i></span>
                 </div>
             </div>
 
             <div class="restostick" >
-                <a href="./projet5.html">
+                <a class="restolink" href="./projet5.html">
                     <div class="DDS-pic">
                         <img src="./public/css/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="LPG">
                     </div>
-                </a>
+                
             
                 <div class="restolegend">
                     <div class="restaux">
                         <span class="restotxt">le délice des sens</span> 
                         <span class="rstxt2">Folie-Méricourt</span>
                     </div>
+                </a>    
                     <span class="lovit"><i class="fa-solid fa-heart"></i></span>
                 </div>
                 </a>
@@ -133,5 +149,5 @@
     </footer>
         
 
-    </div>
+    </div> <!--fin de spinload-->
     </body>
