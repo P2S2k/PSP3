@@ -196,6 +196,7 @@ main .fct {
   margin-left: 25px;
 }
 main .ccd {
+  position: relative;
   width: 100%;
   height: fit-content;
   display: flex;
@@ -209,8 +210,21 @@ main .ccd:hover {
 main .ccd:hover .choirest {
   box-shadow: 5px 5px 5px 5px #b3b3b3;
 }
+main .ccd .num {
+  position: absolute;
+  box-sizing: border-box;
+  font-size: 15px;
+  font-weight: 550;
+  color: black;
+  min-width: 30px;
+  min-height: 30px;
+  border-radius: 15px;
+  background-color: #9356DC;
+  text-align: center;
+  padding-top: 5px;
+  color: white;
+}
 main .ccd .choirest {
-  z-index: 2;
   box-sizing: border-box;
   width: 90%;
   height: 60px;
@@ -218,27 +232,13 @@ main .ccd .choirest {
   box-shadow: 3px 3px 3px 3px #ebebeb;
   text-align: center;
   padding-top: 20px;
+  margin-left: 10px;
   margin-top: 0px;
   border-radius: 18px;
   font-weight: bold;
 }
 main .ccd .choirest i {
   color: #9356DC;
-}
-main .ccd .num {
-  z-index: 1;
-  box-sizing: border-box;
-  font-size: 15px;
-  font-weight: 550;
-  color: black;
-  min-width: 30px;
-  max-height: 30px;
-  border-radius: 15px;
-  background-color: #9356DC;
-  text-align: center;
-  padding-top: 4px;
-  margin-right: -15px;
-  color: white;
 }
 main .lesrestos {
   width: 100%;
