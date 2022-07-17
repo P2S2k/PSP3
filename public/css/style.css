@@ -174,7 +174,6 @@ header .entete .discover {
 }
 header .entete .discover:hover {
   opacity: 0.6;
-  box-shadow: 5px, black;
 }
 header .entete .discover .explore {
   background-color: transparent;
@@ -182,6 +181,9 @@ header .entete .discover .explore {
   color: white;
   font-size: 16px;
   font-weight: 600;
+}
+header .entete .discover .explore:hover {
+  box-shadow: 5px, black;
 }
 
 main {

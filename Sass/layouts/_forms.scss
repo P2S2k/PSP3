@@ -148,7 +148,7 @@ header
 			background: linear-gradient($clr-2 5%, $clr-1);
 			&:hover {
 				opacity: .6;
-				box-shadow: 5px, $clr-b;
+				
 			}
 			.explore{
 				background-color: transparent;
@@ -156,6 +156,9 @@ header
 				color: $clr-w;
 				font-size: 16px;
 				font-weight: 600;
+				&:hover{
+					box-shadow: 5px, $clr-b;
+				}
 			}
 		} 
 	}	
