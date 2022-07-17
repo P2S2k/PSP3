@@ -210,6 +210,7 @@ main .ccd:hover .choirest {
   box-shadow: 5px 5px 5px 5px #b3b3b3;
 }
 main .ccd .choirest {
+  z-index: 2;
   box-sizing: border-box;
   width: 90%;
   height: 60px;
@@ -225,6 +226,7 @@ main .ccd .choirest i {
   color: #9356DC;
 }
 main .ccd .num {
+  z-index: 1;
   box-sizing: border-box;
   font-size: 15px;
   font-weight: 550;
