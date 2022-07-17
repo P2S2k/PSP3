@@ -183,6 +183,7 @@ header .entete .discover .explore {
   font-weight: 600;
 }
 header .entete .discover .explore:hover {
+  cursor: pointer;
   box-shadow: 5px, black;
 }
 
