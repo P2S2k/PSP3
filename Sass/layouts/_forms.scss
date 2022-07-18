@@ -536,9 +536,7 @@ main{
 			text-align: center;
 			margin-top: 40px;
 			margin-bottom: 40px;
-			border: none;
 
-			
 			.commande{
 				@include mrglr-auto;
 				border-radius: 25px;
@@ -549,9 +547,11 @@ main{
 				padding: 10px;
 				padding-left: 30px;
 				padding-right: 30px;
+				border: none;		
+
 				&:hover { 
 				opacity: .7;
-				box-shadow: 3px 3px 3px 3px $clr-4;			
+				box-shadow: 3px 3px 3px 3px $clr-4;	
 				}
 			}
 		}
