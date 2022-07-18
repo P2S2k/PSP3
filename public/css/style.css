@@ -168,12 +168,13 @@ header .entete .discover {
   border-radius: 25px;
   font-size: 18px;
   text-align: center;
-  padding-top: 6px;
+  padding-top: 8px;
   font-weight: bold;
   background: linear-gradient(#FF79DA 5%, #9356DC);
 }
 header .entete .discover:hover {
   opacity: 0.6;
+  box-shadow: 3px 3px 15px black;
 }
 header .entete .discover .explore {
   background-color: transparent;
@@ -184,7 +185,6 @@ header .entete .discover .explore {
 }
 header .entete .discover .explore:hover {
   cursor: pointer;
-  box-shadow: 5px, black;
 }
 
 main {
