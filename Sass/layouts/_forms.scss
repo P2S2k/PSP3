@@ -9,39 +9,41 @@
         min-width: 50%;
     }
 }
+
 @keyframes spinner {
-    0%{
-        opacity: 0;
-        cursor: wait;
-    }
-    25%{
-        opacity: 0.25;
-        cursor: wait;
-    }
-    50%{
-        opacity: 0.5;
-        cursor: wait;
-    }
-    75%{
-        opacity: 0.75;
-        cursor: wait;
-    }
-    100%{
+    0% {
         opacity: 1;
-        cursor:pointer ;
+        transform: translate3d(-50%, -50%, 0) rotate(0deg);
+    }
+    95%{
+        transform: translate3d(-50%, -50%, 0) rotate(1080deg); 
+    }
+    100% {
+		transition-delay: 1s;
+         opacity: 0;
     }
 }
+
 @keyframes heartcolor {
     0%{
         color: $clr-w;
-        cursor: pointer;
+        cursor: default;
     }
     100%{
         color: $clr-1;
-        cursor:default;
+        cursor:pointer;
 		 ;
     }
 }
+@keyframes appears {
+	from{
+		opacity: 0;
+	}
+	to{
+		opacity: 1;
+	}
+}
+
 @keyframes fadein {
     0% {
         padding-top: 50px;
@@ -63,9 +65,27 @@ body
 	@include mrglr-auto;
 } 
 .spinload {
-	width: 100%;
-	height: fit-content;
-	animation: spinner 3s ease-in forwards;
+	height: 20px;
+    opacity: 0;
+    position: relative;
+    transition: opacity linear 0.1s;   
+   
+        animation: 3s linear spinner ;
+        border: solid 3px $clr-2;
+        border-bottom-color: $clr-1;
+        border-radius: 50%;
+        content: "";
+        height: 40px;
+        left: 50%;
+        //*opacity: inherit;
+        position: absolute;
+        top: 50%;
+       transform: translate3d(-50%, -50%, 0);
+        transform-origin: center;
+        width: 40px;
+}
+.accueil{
+	animation: 10s appears forwards;
 }
 //********************HEADER ET SON CONTENU*********************************
 header
@@ -184,6 +204,7 @@ main{
 		margin-right: 2%;
 		margin-left: 3%;
 		margin-bottom: 30px;
+		cursor: pointer;
 		&:hover{ 
 			opacity: .6;
 			.choirest {
@@ -202,7 +223,6 @@ main{
 			background-color: $clr-1;
 			text-align: center;
 			padding-top: 5px;
-			//*margin-right: 10px;
 			color: $clr-w;
 		}
 		.choirest{
@@ -217,7 +237,6 @@ main{
 			margin-top: 0px;
 			border-radius: 18px;
 			font-weight: bold;
-			//*float: left;
 			& i{
 				color: $clr-1;
 			}
@@ -245,9 +264,14 @@ main{
             border-radius: 15px;
 			@include mrglr-auto;
             padding: 3px 3px 3px 3px;
-            margin-bottom: 15px;
-			box-shadow:3px 3px 3px 3px rgb(242, 236, 236);
+            margin-bottom: 20px;
+			box-shadow:3px 3px 3px 5px rgb(242, 236, 236);
             text-decoration: none;
+			cursor: pointer;
+			&:hover{
+				box-shadow:3px 3px 3px 3px $clr-4;
+
+			}
 			.restolink{
 				width: 100%;
 				height: 95%;
@@ -417,7 +441,7 @@ main{
 			}
 		}
 		.food {
-			animation: fadein 2500ms ease-out forwards;
+			animation: fadein 1500ms ease-out forwards;
 			&:hover {
 				& > .food--resize {
 					animation: resizing 800ms forwards;
@@ -473,7 +497,7 @@ main{
 			}
 			&--appears{
 				box-sizing: border-box;
-				min-width: 60px;
+				min-width: 70px;
 				height: 132%;
 				margin-top: -16px;
 				text-align: right;
@@ -512,6 +536,7 @@ main{
 			text-align: center;
 			margin-top: 40px;
 			margin-bottom: 40px;
+			
 			.commande{
 				@include mrglr-auto;
 				border-radius: 25px;
@@ -522,7 +547,11 @@ main{
 				padding: 10px;
 				padding-left: 30px;
 				padding-right: 30px;
+				&:hover { 
+				opacity: .7;
+				box-shadow: 3px 3px 3px 3px $clr-4;			
 				}
+			}
 		}
 	}
 }

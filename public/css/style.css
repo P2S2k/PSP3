@@ -1,10 +1,3 @@
-/*
-@mixin lomf {
-    width: 220px;
-    height: 50px;
-    vertical-align: middle;
-}
-*/
 body {
   font-family: "roboto", sans-serif;
 }
@@ -13,6 +6,13 @@ h1, h2, h3, h4 {
   font-family: "shrikhand";
 }
 
+/*
+@mixin lomf {
+    width: 220px;
+    height: 50px;
+    vertical-align: middle;
+}
+*/
 @font-face {
   font-family: "Roboto";
   src: url("https://fonts.googleapis.com/css2?family=Raleway&family=Roboto&display=swap");
@@ -35,34 +35,33 @@ h1, h2, h3, h4 {
 }
 @keyframes spinner {
   0% {
-    opacity: 0;
-    cursor: wait;
+    opacity: 1;
+    transform: translate3d(-50%, -50%, 0) rotate(0deg);
   }
-  25% {
-    opacity: 0.25;
-    cursor: wait;
-  }
-  50% {
-    opacity: 0.5;
-    cursor: wait;
-  }
-  75% {
-    opacity: 0.75;
-    cursor: wait;
+  95% {
+    transform: translate3d(-50%, -50%, 0) rotate(1080deg);
   }
   100% {
-    opacity: 1;
-    cursor: pointer;
+    transition-delay: 1s;
+    opacity: 0;
   }
 }
 @keyframes heartcolor {
   0% {
     color: white;
-    cursor: pointer;
+    cursor: default;
   }
   100% {
     color: #9356DC;
-    cursor: default;
+    cursor: pointer;
+  }
+}
+@keyframes appears {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 @keyframes fadein {
@@ -84,9 +83,26 @@ body {
 }
 
 .spinload {
-  width: 100%;
-  height: fit-content;
-  animation: spinner 3s ease-in forwards;
+  height: 20px;
+  opacity: 0;
+  position: relative;
+  transition: opacity linear 0.1s;
+  animation: 3s linear spinner;
+  border: solid 3px #FF79DA;
+  border-bottom-color: #9356DC;
+  border-radius: 50%;
+  content: "";
+  height: 40px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  transform-origin: center;
+  width: 40px;
+}
+
+.accueil {
+  animation: 10s appears forwards;
 }
 
 header {
@@ -206,6 +222,7 @@ main .ccd {
   margin-right: 2%;
   margin-left: 3%;
   margin-bottom: 30px;
+  cursor: pointer;
 }
 main .ccd:hover {
   opacity: 0.6;
@@ -264,9 +281,13 @@ main .restostick {
   margin-left: auto;
   margin-right: auto;
   padding: 3px 3px 3px 3px;
-  margin-bottom: 15px;
-  box-shadow: 3px 3px 3px 3px rgb(242, 236, 236);
+  margin-bottom: 20px;
+  box-shadow: 3px 3px 3px 5px rgb(242, 236, 236);
   text-decoration: none;
+  cursor: pointer;
+}
+main .restostick:hover {
+  box-shadow: 3px 3px 3px 3px grey;
 }
 main .restostick .restolink {
   width: 100%;
@@ -458,7 +479,7 @@ main .resto .entrees .barre {
   background-color: #99E2D0;
 }
 main .resto .food {
-  animation: fadein 2500ms ease-out forwards;
+  animation: fadein 1500ms ease-out forwards;
 }
 main .resto .food:hover > .food--resize {
   animation: resizing 800ms forwards;
@@ -514,7 +535,7 @@ main .resto .food--move::first-line {
 }
 main .resto .food--appears {
   box-sizing: border-box;
-  min-width: 60px;
+  min-width: 70px;
   height: 132%;
   margin-top: -16px;
   text-align: right;
@@ -584,6 +605,10 @@ main .resto .order .commande {
   padding: 10px;
   padding-left: 30px;
   padding-right: 30px;
+}
+main .resto .order .commande:hover {
+  opacity: 0.7;
+  box-shadow: 3px 3px 3px 3px grey;
 }
 
 footer {
