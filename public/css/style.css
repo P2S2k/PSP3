@@ -605,6 +605,7 @@ main .resto .order .commande {
   padding: 10px;
   padding-left: 30px;
   padding-right: 30px;
+  border: none;
 }
 main .resto .order .commande:hover {
   opacity: 0.7;
