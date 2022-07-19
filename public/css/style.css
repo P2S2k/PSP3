@@ -216,7 +216,7 @@ main .fct {
 }
 main .ccd {
   position: relative;
-  width: 96%;
+  width: 94%;
   height: fit-content;
   display: flex;
   margin-right: 2%;
