@@ -304,7 +304,7 @@ main .ccd {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-right: 2%;
+  margin-right: 3%;
   margin-left: 2%;
   margin-bottom: 30px;
   cursor: pointer;
