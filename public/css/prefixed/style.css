@@ -166,8 +166,8 @@ body {
 }
 
 .accueil {
-  -webkit-animation: 10s appears forwards;
-          animation: 10s appears forwards;
+  -webkit-animation: 12s appears forwards;
+          animation: 12s appears forwards;
 }
 
 header {
@@ -304,7 +304,7 @@ main .ccd {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-right: 2%;
+  margin-right: 3%;
   margin-left: 3%;
   margin-bottom: 30px;
   cursor: pointer;
