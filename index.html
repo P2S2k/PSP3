@@ -4,6 +4,13 @@
         <meta charset="utf-8" />
 
         <title>OhMyFood</title>
+
+
+        <link rel="stylesheet" media="screen and (min-width: 992px)" href="./public/css/style.css"> 
+        <link rel="stylesheet" media="screen and (min-width: 481px) and (max-width: 991px)" href="./public/css/style.css">
+        <link rel="stylesheet" media="screen and (max-width: 480px)" href="./public/css/style.css">
+
+
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./public/css/style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,8 +38,15 @@
                 <input type="text" class="ville" placeholder="Localisation">
             </div>
             
-            <p class="text1">Réservez le menu qui <br> vous convient</p>
-            <p class="text2">Découvrez des restaurants d'exception,<br> sélectionnés par nos soins</p>
+            <div class="text112">
+                <p class="text1">Réservez le menu qui</p>
+                <p class="text12">vous convient</p>
+            </div>
+            <div class="text221">
+                <p class="text2">Découvrez des restaurants d'exception,</p>
+                <p class="text21">sélectionnés par nos soins</p>
+            </div>
+            
             <div class="discover">
                 <input class="explore" type="button" value="Explorer nos restaurants" >
             </div>
@@ -41,21 +55,26 @@
     </header>
     <Main>
         <p class="fct">Fonctionnement</p>
-        <div class="ccd">
-            <p class="num">1</p>
-            <p class="choirest"><i class="fa-solid fa-mobile-screen"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Choisissez un restaurant</p>
-        </div>
-        
-        <div class="ccd">
-            <p class="num">2</p>
-            <p class="choirest"><i class="fa-solid fa-list"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Composez votre menu</p>
-        </div>
-
-        <div class="ccd">
-            <p class="num">3</p>
-            <p class="choirest"><i class="fa-solid fa-store"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dégustez au restaurant</p>
-        </div>
-
+        <div class="ccd-mepge">
+            <div class="ccd-mep1">
+                <div class="ccd">
+                    <p class="num">1</p>
+                    <p class="choirest"><i class="fa-solid fa-mobile-screen"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Choisissez un restaurant</p>
+                </div>
+            </div> <!--fin de mep1-->
+            <div class="ccd-mep2">  
+                <div class="ccd">
+                    <p class="num">2</p>
+                    <p class="choirest"><i class="fa-solid fa-list"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Composez votre menu</p>
+                </div>
+            </div> <!--fin de mep2-->
+            <div class="ccd-mep3">
+                <div class="ccd">
+                    <p class="num">3</p>
+                    <p class="choirest"><i class="fa-solid fa-store"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dégustez au restaurant</p>
+                </div>
+            </div> <!--fin de mep3-->
+        </div> <!--fin de mepge--> 
         <div class="lesrestos">
             <p class="rsts">Restaurants</p>
             <div class="restostick" >
