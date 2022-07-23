@@ -56,12 +56,45 @@ h1, h2, h3, h4 {
     cursor: pointer;
   }
 }
+@keyframes heartcolor1 {
+  0% {
+    color: white;
+    font-size: 100%;
+    cursor: default;
+  }
+  50% {
+    color: #9356DC;
+    opacity: 0.4;
+    font-size: 150%;
+    cursor: default;
+  }
+  100% {
+    color: #9356DC;
+    opacity: 1;
+    font-size: 150%;
+    cursor: pointer;
+  }
+}
 @keyframes appears {
   from {
     opacity: 0;
   }
   to {
     opacity: 1;
+  }
+}
+@keyframes fadein1 {
+  0% {
+    padding-top: 35px;
+    opacity: 0;
+  }
+  50% {
+    padding-top: 25px;
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    padding-top: 15px;
   }
 }
 @keyframes fadein {
@@ -75,8 +108,7 @@ h1, h2, h3, h4 {
   }
 }
 @media screen and (max-width: 690px) {
-  body {
-    max-width: 540px;
+  body .bigcont {
     min-width: 375px;
     height: fit-content;
     margin-left: auto;
@@ -88,8 +120,9 @@ h1, h2, h3, h4 {
     position: relative;
     transition: opacity linear 0.1s;
     animation: 3s linear spinner;
-    border: solid 3px #FF79DA;
+    border: solid 4px transparent;
     border-bottom-color: #9356DC;
+    border-top-color: #FF79DA;
     border-radius: 50%;
     content: "";
     height: 40px;
@@ -103,18 +136,20 @@ h1, h2, h3, h4 {
   .accueil {
     animation: 12s appears forwards;
   }
-  header {
-    width: 100%;
+  header .bigconth {
+    width: 104%;
+    margin-left: -10px;
+    margin-top: -10px;
+    background-color: #f8f8f8;
   }
-  header .bandeau {
+  header .bigconth .bandeau {
     display: flex;
     justify-content: space-around;
     width: 100%;
     height: 50px;
-    padding-top: 5px;
-    background-color: #f8f8f8;
+    padding-top: 25px;
   }
-  header .bandeau .arrow, header .bandeau .right {
+  header .bigconth .bandeau .arrow, header .bigconth .bandeau .right {
     box-sizing: border-box;
     width: 25px;
     height: 40px;
@@ -122,28 +157,28 @@ h1, h2, h3, h4 {
     color: black;
     padding-top: 6px;
   }
-  header .bandeau .logoomf {
+  header .bigconth .bandeau .logoomf {
     width: 200px;
     height: 40px;
   }
-  header .entete {
+  header .bigconth .entete {
     width: 100%;
     height: 250px;
     background-color: #f8f8f8;
   }
-  header .entete .localisation {
+  header .bigconth .entete .localisation {
     width: 100%;
     height: 40px;
     box-sizing: border-box;
     font-size: 24px;
-    background-color: rgb(208, 203, 203);
+    background-color: #e6e6e6;
     padding-top: 5px;
   }
-  header .entete .localisation i {
+  header .bigconth .entete .localisation i {
     width: 30%;
     text-align: right;
   }
-  header .entete .localisation .ville {
+  header .bigconth .entete .localisation .ville {
     width: 60%;
     margin-bottom: 10px;
     text-decoration: none;
@@ -154,10 +189,10 @@ h1, h2, h3, h4 {
     border: none;
     padding-left: 10px;
   }
-  header .entete .localisation .ville:focus {
+  header .bigconth .entete .localisation .ville:focus {
     outline: none;
   }
-  header .entete .text1 {
+  header .bigconth .entete .text1 {
     width: 70%;
     margin-left: auto;
     margin-right: auto;
@@ -166,7 +201,7 @@ h1, h2, h3, h4 {
     text-align: center;
     margin-bottom: -20px;
   }
-  header .entete .text12 {
+  header .bigconth .entete .text12 {
     width: 70%;
     margin-left: auto;
     margin-right: auto;
@@ -174,7 +209,7 @@ h1, h2, h3, h4 {
     font-weight: bold;
     text-align: center;
   }
-  header .entete .text2 {
+  header .bigconth .entete .text2 {
     width: 85%;
     margin-left: auto;
     margin-right: auto;
@@ -182,14 +217,14 @@ h1, h2, h3, h4 {
     text-align: center;
     margin-bottom: -15px;
   }
-  header .entete .text21 {
+  header .bigconth .entete .text21 {
     width: 85%;
     margin-left: auto;
     margin-right: auto;
     font-size: 16px;
     text-align: center;
   }
-  header .entete .discover {
+  header .bigconth .entete .discover {
     box-sizing: border-box;
     margin-top: 30px;
     width: 55%;
@@ -203,32 +238,33 @@ h1, h2, h3, h4 {
     font-weight: bold;
     background: linear-gradient(#FF79DA 5%, #9356DC);
   }
-  header .entete .discover:hover {
+  header .bigconth .entete .discover:hover {
     opacity: 0.6;
     box-shadow: 3px 3px 15px black;
   }
-  header .entete .discover .explore {
+  header .bigconth .entete .discover .explore {
     background-color: transparent;
     border: 0;
     color: white;
     font-size: 16px;
     font-weight: 600;
   }
-  header .entete .discover .explore:hover {
+  header .bigconth .entete .discover .explore:hover {
     cursor: pointer;
   }
-  main {
+  main .bigcontm {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 103%;
+    margin-left: -8px;
     height: fit-content;
   }
-  main .fct {
+  main .bigcontm .fct {
     font-size: 24px;
     font-weight: bold;
     margin-left: 25px;
   }
-  main .ccd {
+  main .bigcontm .ccd {
     position: relative;
     width: 100%;
     height: fit-content;
@@ -238,13 +274,13 @@ h1, h2, h3, h4 {
     margin-bottom: 30px;
     cursor: pointer;
   }
-  main .ccd:hover {
+  main .bigcontm .ccd:hover {
     opacity: 0.6;
   }
-  main .ccd:hover .choirest {
+  main .bigcontm .ccd:hover .choirest {
     box-shadow: 5px 5px 5px 5px #b3b3b3;
   }
-  main .ccd .num {
+  main .bigcontm .ccd .num {
     position: absolute;
     box-sizing: border-box;
     font-size: 15px;
@@ -258,7 +294,7 @@ h1, h2, h3, h4 {
     padding-top: 5px;
     color: white;
   }
-  main .ccd .choirest {
+  main .bigcontm .ccd .choirest {
     box-sizing: border-box;
     width: 90%;
     height: 60px;
@@ -271,24 +307,25 @@ h1, h2, h3, h4 {
     border-radius: 18px;
     font-weight: bold;
   }
-  main .ccd .choirest i {
+  main .bigcontm .ccd .choirest i {
     color: #9356DC;
   }
-  main .lesrestos {
+  main .bigcontm .lesrestos {
     width: 100%;
     height: fit-content;
     background-color: #f8f8f8;
     padding-bottom: 30px;
   }
-  main .lesrestos .rsts {
+  main .bigcontm .lesrestos .rsts {
     font-size: 24px;
     font-weight: bold;
     margin-left: 25px;
   }
-  main .restostick {
+  main .bigcontm .restostick {
     width: 85%;
     height: 240px;
     min-width: 170px;
+    max-width: 500px;
     min-height: 150px;
     background-color: white;
     border-radius: 15px;
@@ -300,19 +337,19 @@ h1, h2, h3, h4 {
     text-decoration: none;
     cursor: pointer;
   }
-  main .restostick:hover {
+  main .bigcontm .restostick:hover {
     box-shadow: 3px 3px 3px 3px grey;
   }
-  main .restostick .restolink {
+  main .bigcontm .restostick .restolink {
     width: 100%;
     height: 95%;
     margin-top: -15px;
     cursor: inherit;
   }
-  main .restostick :link {
+  main .bigcontm .restostick :link {
     text-decoration: none;
   }
-  main .LNE-pic {
+  main .bigcontm .LNE-pic {
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -322,12 +359,12 @@ h1, h2, h3, h4 {
     margin-bottom: 3px;
     border-radius: 10px 10px 0 0;
   }
-  main .LNE-pic img {
+  main .bigcontm .LNE-pic img {
     max-width: 100%;
     height: auto;
     bottom: 0;
   }
-  main .LPG-pic, main .ALF-pic, main .DDS-pic {
+  main .bigcontm .LPG-pic, main .bigcontm .ALF-pic, main .bigcontm .DDS-pic {
     display: flex;
     align-items: flex-end;
     overflow: hidden;
@@ -337,7 +374,7 @@ h1, h2, h3, h4 {
     margin-bottom: 3px;
     border-radius: 10px 10px 0 0;
   }
-  main .new {
+  main .bigcontm .new {
     width: 90px;
     height: 25px;
     background-color: #99E2D0;
@@ -348,26 +385,26 @@ h1, h2, h3, h4 {
     text-align: center;
     padding-top: 4px;
   }
-  main img {
+  main .bigcontm img {
     max-width: 100%;
     height: auto;
     bottom: 0;
   }
-  main .lovit {
+  main .bigcontm .lovit {
     box-sizing: border-box;
     width: 30px;
     height: 45px;
     font-size: 26px;
     padding-top: 1px;
   }
-  main .lovit i {
+  main .bigcontm .lovit i {
     color: white;
     text-shadow: 1px 1px 4px black;
   }
-  main .lovit:hover > i {
-    animation: heartcolor 3000ms ease-in-out forwards;
+  main .bigcontm .lovit:hover > i {
+    animation: heartcolor 2000ms ease-in-out forwards;
   }
-  main .restolegend {
+  main .bigcontm .restolegend {
     display: flex;
     justify-content: space-between;
     padding-top: 12px;
@@ -375,16 +412,16 @@ h1, h2, h3, h4 {
     width: 98%;
     height: 30%;
   }
-  main .restaux {
+  main .bigcontm .restaux {
     display: flex;
     flex-direction: column;
-    width: 65%;
+    width: 70%;
     height: 80%;
     font-size: 20px;
     padding-left: 2%;
-    padding-top: 15px;
+    padding-top: 0px;
   }
-  main .restaux .restotxt {
+  main .bigcontm .restaux .restotxt {
     box-sizing: border-box;
     width: 100%;
     min-height: 35%;
@@ -394,48 +431,48 @@ h1, h2, h3, h4 {
     border-radius: 10px;
     padding: 1% 1% 1% 1%;
   }
-  main .restaux .restotxt::first-letter {
+  main .bigcontm .restaux .restotxt::first-letter {
     text-transform: uppercase;
   }
-  main .restaux .rstxt2 {
+  main .bigcontm .restaux .rstxt2 {
     width: 100%;
     height: 35%;
     color: grey;
   }
-  main .photoALF {
+  main .bigcontm .photoALF {
     width: 100%;
     height: 10%;
     overflow: hidden;
     margin-bottom: -19px;
   }
-  main .photoALF .alfpic {
+  main .bigcontm .photoALF .alfpic {
     max-width: 100%;
     height: auto;
     vertical-align: middle;
   }
-  main .photoLPG {
+  main .bigcontm .photoLPG {
     width: 100%;
     height: 10%;
     overflow: hidden;
     margin-bottom: -19px;
   }
-  main .photoLPG .lpgpic {
+  main .bigcontm .photoLPG .lpgpic {
     max-width: 100%;
     height: auto;
     vertical-align: middle;
   }
-  main .photoLDS {
+  main .bigcontm .photoLDS {
     width: 100%;
     height: 10%;
     overflow: hidden;
     margin-bottom: -19px;
   }
-  main .photoLDS .ldspic {
+  main .bigcontm .photoLDS .ldspic {
     max-width: 100%;
     height: auto;
     vertical-align: middle;
   }
-  main .photoLNE {
+  main .bigcontm .photoLNE {
     width: 100%;
     height: 250px;
     display: flex;
@@ -443,18 +480,67 @@ h1, h2, h3, h4 {
     align-items: center;
     margin-bottom: -19px;
   }
-  main .photoLNE .lnepic {
+  main .bigcontm .photoLNE .lnepic {
     max-width: 100%;
     height: auto;
     vertical-align: middle;
   }
-  main .resto {
+  main .bigcontm .foody {
+    width: 100%;
+    height: 300px;
+    margin-bottom: 0px;
+  }
+  main .bigcontm .foodyxl {
+    width: 100%;
+    height: 400px;
+    margin-bottom: 5px;
+  }
+  main .bigcontm .food1 {
+    animation: fadein1 800ms linear forwards;
+  }
+  main .bigcontm .food2 {
+    animation: fadein1 800ms 400ms linear forwards;
+  }
+  main .bigcontm .food3 {
+    animation: fadein1 800ms 800ms linear forwards;
+  }
+  main .bigcontm .food4 {
+    animation: fadein1 800ms 1200ms linear forwards;
+  }
+  main .bigcontm .food5 {
+    animation: fadein1 800ms 1600ms linear forwards;
+  }
+  main .bigcontm .food6 {
+    animation: fadein1 800ms 2000ms linear forwards;
+  }
+  main .bigcontm .food7 {
+    animation: fadein1 800ms 2400ms linear forwards;
+  }
+  main .bigcontm .food8 {
+    animation: fadein1 800ms 2800ms linear forwards;
+  }
+  main .bigcontm .food9 {
+    animation: fadein1 800ms 3200ms linear forwards;
+  }
+  main .bigcontm .food10 {
+    animation: fadein1 800ms 3200ms linear forwards;
+  }
+  main .bigcontm .food1, main .bigcontm .food2, main .bigcontm .food3, main .bigcontm .food4, main .bigcontm .food5, main .bigcontm .food6, main .bigcontm .food7, main .bigcontm .food8, main .bigcontm .food9, main .bigcontm .food10 {
+    width: 100%;
+    height: 80px;
+    opacity: 0;
+    background-color: transparent;
+    overflow-y: hidden;
+    margin-top: 0px;
+  }
+  main .bigcontm .resto {
     width: 100%;
     min-height: 880px;
     border-radius: 25px 25px 0px 0px;
     background-color: #f8f8f8;
+    margin-top: 40px;
   }
-  main .resto .restnom {
+  main .bigcontm .resto .restnom {
     width: 100%;
     height: 50px;
     box-sizing: border-box;
@@ -464,16 +550,16 @@ h1, h2, h3, h4 {
     padding-right: 15px;
     margin-top: 10px;
   }
-  main .resto .restnom .nom {
+  main .bigcontm .resto .restnom .nom {
     width: 85%;
     height: 45px;
     font-family: "shrikhand", cursive;
     font-size: 28px;
   }
-  main .resto .restnom .nom::first-letter {
+  main .bigcontm .resto .restnom .nom::first-letter {
     text-transform: uppercase;
   }
-  main .resto .entrees {
+  main .bigcontm .resto .entrees {
     box-sizing: border-box;
     width: 100%;
     height: 30px;
@@ -482,31 +568,31 @@ h1, h2, h3, h4 {
     margin-top: 20px;
     padding-left: 10px;
   }
-  main .resto .entrees .text {
+  main .bigcontm .resto .entrees .text {
     height: 40px;
     font-size: 18px;
     text-transform: uppercase;
   }
-  main .resto .entrees .barre {
+  main .bigcontm .resto .entrees .barre {
     width: 12%;
     height: 4px;
     background-color: #99E2D0;
   }
-  main .resto .food {
+  main .bigcontm .resto .food {
     animation: fadein 1500ms ease-out forwards;
   }
-  main .resto .food:hover > .food--resize {
+  main .bigcontm .resto .food:hover > .food--resize {
     animation: resizing 800ms forwards;
   }
-  main .resto .food:hover > .food--appears {
+  main .bigcontm .resto .food:hover > .food--appears {
     transform: translateX(0px);
     transition: transform 800ms;
   }
-  main .resto .food:hover > .food--appears > i {
+  main .bigcontm .resto .food:hover > .food--appears > i {
     transform: rotate(360deg);
     transition: transform 800ms;
   }
-  main .resto .food {
+  main .bigcontm .resto .food {
     width: 95%;
     height: 70px;
     box-sizing: border-box;
@@ -516,13 +602,14 @@ h1, h2, h3, h4 {
     margin-right: auto;
     padding-left: 5px;
     padding-top: 15px;
-    margin-top: 15px;
+    margin-top: 0px;
     border-radius: 10px;
     background-color: white;
     box-shadow: 3px 3px 3px 3px rgb(242, 236, 236);
     overflow: hidden;
+    cursor: pointer;
   }
-  main .resto .food--resize {
+  main .bigcontm .resto .food--resize {
     min-width: 80%;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -530,12 +617,12 @@ h1, h2, h3, h4 {
     color: grey;
     font-size: 16px;
   }
-  main .resto .food--resize::first-line {
+  main .bigcontm .resto .food--resize::first-line {
     color: black;
     font-size: 18px;
     font-weight: bold;
   }
-  main .resto .food--move {
+  main .bigcontm .resto .food--move {
     box-sizing: border-box;
     min-width: 20%;
     font-size: 17px;
@@ -544,10 +631,10 @@ h1, h2, h3, h4 {
     margin-right: 3px;
     text-align: right;
   }
-  main .resto .food--move::first-line {
+  main .bigcontm .resto .food--move::first-line {
     font-size: 16px;
   }
-  main .resto .food--appears {
+  main .bigcontm .resto .food--appears {
     box-sizing: border-box;
     min-width: 70px;
     height: 132%;
@@ -558,12 +645,12 @@ h1, h2, h3, h4 {
     text-align: center;
     padding-top: 21px;
   }
-  main .resto .food--appears i {
+  main .bigcontm .resto .food--appears i {
     transform: rotate(0deg);
     transition: transform 500ms 200ms;
     color: white;
   }
-  main .resto .plats {
+  main .bigcontm .resto .plats {
     box-sizing: border-box;
     width: 100%;
     height: 30px;
@@ -572,17 +659,17 @@ h1, h2, h3, h4 {
     margin-top: 20px;
     padding-left: 10px;
   }
-  main .resto .plats .text {
+  main .bigcontm .resto .plats .text {
     height: 40px;
     font-size: 18px;
     text-transform: uppercase;
   }
-  main .resto .plats .barre {
+  main .bigcontm .resto .plats .barre {
     width: 12%;
     height: 4px;
     background-color: #99E2D0;
   }
-  main .resto .sucre {
+  main .bigcontm .resto .sucre {
     box-sizing: border-box;
     width: 100%;
     height: 30px;
@@ -591,24 +678,24 @@ h1, h2, h3, h4 {
     margin-top: 20px;
     padding-left: 10px;
   }
-  main .resto .sucre .text {
+  main .bigcontm .resto .sucre .text {
     height: 40px;
     font-size: 18px;
     text-transform: uppercase;
   }
-  main .resto .sucre .barre {
+  main .bigcontm .resto .sucre .barre {
     width: 12%;
     height: 4px;
     background-color: #99E2D0;
   }
-  main .resto .order {
+  main .bigcontm .resto .order {
     width: 100%;
     height: fit-content;
     text-align: center;
     margin-top: 40px;
     margin-bottom: 40px;
   }
-  main .resto .order .commande {
+  main .bigcontm .resto .order .commande {
     margin-left: auto;
     margin-right: auto;
     border-radius: 25px;
@@ -621,37 +708,43 @@ h1, h2, h3, h4 {
     padding-right: 30px;
     border: none;
   }
-  main .resto .order .commande:hover {
+  main .bigcontm .resto .order .commande:hover {
     opacity: 0.7;
     box-shadow: 3px 3px 3px 3px grey;
+    cursor: pointer;
   }
-  footer {
+  footer .bigcontf {
     box-sizing: border-box;
-    width: 100%;
+    width: 104%;
+    overflow: hidden;
+    margin-left: -10px;
+    margin-bottom: -10px;
+    align-items: center;
     height: 220px;
     background-color: black;
     padding-top: 25px;
     padding-left: 15px;
   }
-  footer p {
+  footer .bigcontf p {
     color: white;
     font-weight: bold;
   }
-  footer a {
+  footer .bigcontf a {
     text-decoration: none;
     color: white;
     font-weight: bold;
   }
-  footer .downlogoomf {
+  footer .bigcontf .downlogoomf {
     width: 30%;
-    height: 25px;
+    max-width: 250px;
+    min-width: 160px;
+    height: 15%;
     color: white;
     filter: invert(100%);
   }
 }
 @media screen and (min-width: 691px) and (max-width: 991px) {
-  body {
-    max-width: 860px;
+  body .bigcont {
     min-width: 451px;
     height: fit-content;
     margin-top: -10px;
@@ -663,8 +756,9 @@ h1, h2, h3, h4 {
     opacity: 0;
     position: relative;
     transition: opacity linear 0.1s;
-    animation: 3s linear spinner;
-    border: solid 3px #FF79DA;
+    animation: 4s linear spinner;
+    border: solid 5px transparent;
+    border-top-color: #FF79DA;
     border-bottom-color: #9356DC;
     border-radius: 50%;
     content: "";
@@ -679,13 +773,16 @@ h1, h2, h3, h4 {
   .accueil {
     animation: 12s appears forwards;
   }
-  header {
-    width: 100%;
+  header .bigconth {
+    overflow: hidden;
+    width: 103%;
+    margin-left: -8px;
+    height: fit-content;
     box-sizing: border-box;
     background-color: #f8f8f8;
-    padding-bottom: 20px;
+    padding-bottom: 30px;
   }
-  header .bandeau {
+  header .bigconth .bandeau {
     display: flex;
     justify-content: space-around;
     margin-top: 10px;
@@ -694,7 +791,7 @@ h1, h2, h3, h4 {
     height: 100px;
     padding-top: 25px;
   }
-  header .bandeau .arrow, header .bandeau .right {
+  header .bigconth .bandeau .arrow, header .bigconth .bandeau .right {
     box-sizing: border-box;
     width: 60px;
     height: 60px;
@@ -704,33 +801,33 @@ h1, h2, h3, h4 {
     color: black;
     padding-top: 6px;
   }
-  header .bandeau .arrow:hover, header .bandeau .right:hover {
+  header .bigconth .bandeau .arrow:hover, header .bigconth .bandeau .right:hover {
     color: #9356DC;
   }
-  header .bandeau .logoomf {
+  header .bigconth .bandeau .logoomf {
     width: 300px;
     height: 60px;
   }
-  header .entete {
+  header .bigconth .entete {
     width: 100%;
     height: 250px;
   }
-  header .entete .localisation {
+  header .bigconth .entete .localisation {
     margin-left: auto;
     margin-right: auto;
     width: 60%;
     height: 50px;
     box-sizing: border-box;
-    font-size: 30px;
+    font-size: 26px;
     background-color: rgb(208, 203, 203);
     padding-top: 5px;
   }
-  header .entete .localisation i {
+  header .bigconth .entete .localisation i {
     width: 20%;
     text-align: left;
     margin-left: 30px;
   }
-  header .entete .localisation .ville {
+  header .bigconth .entete .localisation .ville {
     width: 65%;
     margin-bottom: 10px;
     text-decoration: none;
@@ -741,17 +838,17 @@ h1, h2, h3, h4 {
     border: none;
     padding-left: 10px;
   }
-  header .entete .localisation .ville:focus {
+  header .bigconth .entete .localisation .ville:focus {
     outline: none;
   }
-  header .entete .text112 {
+  header .bigconth .entete .text112 {
     width: 100%;
     height: fit-content;
     display: flex;
     margin-top: 10px;
     margin-left: 5%;
   }
-  header .entete .text112 .text1 {
+  header .bigconth .entete .text112 .text1 {
     width: 50%;
     margin-left: auto;
     margin-right: auto;
@@ -759,30 +856,30 @@ h1, h2, h3, h4 {
     font-weight: bold;
     text-align: right;
   }
-  header .entete .text112 .text12 {
+  header .bigconth .entete .text112 .text12 {
     width: 50%;
     font-size: 24px;
     font-weight: bold;
     text-align: left;
     padding-left: 5px;
   }
-  header .entete .text221 {
+  header .bigconth .entete .text221 {
     width: 100%;
     display: flex;
     margin-left: 6%;
   }
-  header .entete .text221 .text2 {
+  header .bigconth .entete .text221 .text2 {
     width: 50%;
     font-size: 18px;
     text-align: right;
   }
-  header .entete .text221 .text21 {
+  header .bigconth .entete .text221 .text21 {
     width: 50%;
     font-size: 18px;
     text-align: left;
     padding-left: 3px;
   }
-  header .entete .discover {
+  header .bigconth .entete .discover {
     box-sizing: border-box;
     margin-top: 20px;
     width: 45%;
@@ -796,49 +893,50 @@ h1, h2, h3, h4 {
     font-weight: bold;
     background: linear-gradient(#FF79DA 5%, #9356DC);
   }
-  header .entete .discover:hover {
+  header .bigconth .entete .discover:hover {
     opacity: 0.6;
     box-shadow: 3px 3px 15px black;
+    cursor: pointer;
   }
-  header .entete .discover .explore {
+  header .bigconth .entete .discover .explore {
     background-color: transparent;
     border: 0;
     color: white;
     font-size: 16px;
     font-weight: 600;
   }
-  header .entete .discover .explore:hover {
+  header .bigconth .entete .discover .explore:hover {
     cursor: pointer;
   }
-  main {
+  main .bigcontm {
     display: flex;
     flex-direction: column;
     width: 100%;
     height: fit-content;
   }
-  main .fct {
+  main .bigcontm .fct {
     font-size: 24px;
     font-weight: bold;
     margin-left: 25px;
   }
-  main .ccd-mep1 {
+  main .bigcontm .ccd-mep1 {
     width: 100%;
     height: fit-content;
     display: flex;
   }
-  main .ccd-mep2 {
+  main .bigcontm .ccd-mep2 {
     width: 100%;
     height: fit-content;
     display: flex;
     justify-content: space-around;
   }
-  main .ccd-mep3 {
+  main .bigcontm .ccd-mep3 {
     width: 100%;
     height: fit-content;
     display: flex;
     justify-content: right;
   }
-  main .ccd {
+  main .bigcontm .ccd {
     position: relative;
     width: 70%;
     max-width: 450px;
@@ -850,13 +948,13 @@ h1, h2, h3, h4 {
     font-size: 20px;
     cursor: pointer;
   }
-  main .ccd:hover {
+  main .bigcontm .ccd:hover {
     opacity: 0.6;
   }
-  main .ccd:hover .choirest {
+  main .bigcontm .ccd:hover .choirest {
     box-shadow: 5px 5px 5px 5px #b3b3b3;
   }
-  main .ccd .num {
+  main .bigcontm .ccd .num {
     position: absolute;
     box-sizing: border-box;
     font-size: 15px;
@@ -870,7 +968,7 @@ h1, h2, h3, h4 {
     padding-top: 5px;
     color: white;
   }
-  main .ccd .choirest {
+  main .bigcontm .ccd .choirest {
     box-sizing: border-box;
     width: 90%;
     height: 60px;
@@ -883,10 +981,10 @@ h1, h2, h3, h4 {
     border-radius: 18px;
     font-weight: bold;
   }
-  main .ccd .choirest i {
+  main .bigcontm .ccd .choirest i {
     color: #9356DC;
   }
-  main .lesrestos {
+  main .bigcontm .lesrestos {
     width: 100%;
     display: flex;
     flex-flow: wrap;
@@ -894,17 +992,18 @@ h1, h2, h3, h4 {
     background-color: #f8f8f8;
     padding-bottom: 30px;
   }
-  main .lesrestos .rsts {
+  main .bigcontm .lesrestos .rsts {
     width: 100%;
     font-size: 24px;
     font-weight: bold;
     margin-left: 25px;
   }
-  main .restostick {
-    width: 45%;
+  main .bigcontm .restostick {
+    width: 42%;
     height: 240px;
-    min-width: 170px;
+    min-width: 380px;
     min-height: 150px;
+    overflow: hidden;
     background-color: white;
     border-radius: 15px;
     margin-left: auto;
@@ -915,74 +1014,93 @@ h1, h2, h3, h4 {
     text-decoration: none;
     cursor: pointer;
   }
-  main .restostick:hover {
+  main .bigcontm .restostick:hover {
     box-shadow: 3px 3px 3px 3px grey;
   }
-  main .restostick .restolink {
+  main .bigcontm .restostick .restolink {
     width: 100%;
     height: 95%;
     margin-top: -15px;
     cursor: inherit;
   }
-  main .restostick :link {
+  main .bigcontm .restostick :link {
     text-decoration: none;
   }
-  main .LNE-pic {
+  main .bigcontm .LNE-pic {
+    position: relative;
     display: flex;
     align-items: center;
     overflow: hidden;
-    width: 100%;
+    width: 102%;
     height: 72%;
+    margin-left: -5px;
+    margin-top: -5px;
     min-height: 90px;
     margin-bottom: 3px;
     border-radius: 10px 10px 0 0;
   }
-  main .LNE-pic img {
-    max-width: 100%;
-    height: auto;
-    bottom: 0;
-  }
-  main .LPG-pic, main .ALF-pic, main .DDS-pic {
-    display: flex;
-    align-items: flex-end;
-    overflow: hidden;
-    width: 100%;
-    height: 70%;
-    min-height: 90px;
-    margin-bottom: 3px;
-    border-radius: 10px 10px 0 0;
-  }
-  main .new {
+  main .bigcontm .LNE-pic .new {
+    position: absolute;
     width: 90px;
     height: 25px;
     background-color: #99E2D0;
     color: #278870;
-    margin-left: -100px;
-    margin-bottom: 125px;
+    margin-left: 75%;
+    margin-bottom: 124px;
     border-radius: 5px;
     text-align: center;
-    padding-top: 4px;
+    padding-top: 5px;
   }
-  main img {
+  main .bigcontm .LNE-pic img {
     max-width: 100%;
     height: auto;
     bottom: 0;
   }
-  main .lovit {
+  main .bigcontm .LPG-pic, main .bigcontm .ALF-pic, main .bigcontm .DDS-pic {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    width: 102%;
+    margin-left: -5px;
+    margin-top: -5px;
+    height: 72%;
+    min-height: 90px;
+    margin-bottom: 0px;
+    border-radius: 10px 10px 0 0;
+  }
+  main .bigcontm .LPG-pic .new, main .bigcontm .ALF-pic .new, main .bigcontm .DDS-pic .new {
+    position: absolute;
+    width: 90px;
+    height: 25px;
+    background-color: #99E2D0;
+    color: #278870;
+    margin-left: 75%;
+    margin-bottom: 133px;
+    border-radius: 5px;
+    text-align: center;
+    padding-top: 5px;
+  }
+  main .bigcontm .LPG-pic img, main .bigcontm .ALF-pic img, main .bigcontm .DDS-pic img {
+    max-width: 100%;
+    height: auto;
+    bottom: 0;
+  }
+  main .bigcontm .lovit {
     box-sizing: border-box;
     width: 40px;
     height: 60px;
     font-size: 32px;
     padding-top: 1px;
   }
-  main .lovit i {
+  main .bigcontm .lovit i {
     color: white;
     text-shadow: 1px 1px 4px black;
   }
-  main .lovit:hover > i {
+  main .bigcontm .lovit:hover > i {
     animation: heartcolor 3000ms ease-in-out forwards;
   }
-  main .restolegend {
+  main .bigcontm .restolegend {
     display: flex;
     justify-content: space-between;
     padding-top: 12px;
@@ -990,16 +1108,16 @@ h1, h2, h3, h4 {
     width: 98%;
     height: 30%;
   }
-  main .restaux {
+  main .bigcontm .restaux {
     display: flex;
     flex-direction: column;
-    width: 65%;
+    width: 90%;
     height: 80%;
     font-size: 20px;
     padding-left: 2%;
-    padding-top: 15px;
+    padding-top: 0px;
   }
-  main .restaux .restotxt {
+  main .bigcontm .restaux .restotxt {
     box-sizing: border-box;
     width: 100%;
     min-height: 35%;
@@ -1009,51 +1127,51 @@ h1, h2, h3, h4 {
     border-radius: 10px;
     padding: 1% 1% 1% 1%;
   }
-  main .restaux .restotxt::first-letter {
+  main .bigcontm .restaux .restotxt::first-letter {
     text-transform: uppercase;
   }
-  main .restaux .rstxt2 {
+  main .bigcontm .restaux .rstxt2 {
     width: 100%;
     height: 35%;
     color: grey;
   }
-  main .photoALF {
+  main .bigcontm .photoALF {
     width: 100%;
     height: 10%;
     overflow: hidden;
     margin-bottom: -19px;
     height: 15%;
   }
-  main .photoALF .alfpic {
+  main .bigcontm .photoALF .alfpic {
     max-width: 100%;
     height: auto;
     vertical-align: middle;
   }
-  main .photoLPG {
+  main .bigcontm .photoLPG {
     width: 100%;
     height: 10%;
     overflow: hidden;
     margin-bottom: -19px;
     height: 15%;
   }
-  main .photoLPG .lpgpic {
+  main .bigcontm .photoLPG .lpgpic {
     max-width: 100%;
     height: auto;
     vertical-align: middle;
   }
-  main .photoLDS {
+  main .bigcontm .photoLDS {
     width: 100%;
     height: 10%;
     overflow: hidden;
     margin-bottom: -19px;
     height: 15%;
   }
-  main .photoLDS .ldspic {
+  main .bigcontm .photoLDS .ldspic {
     max-width: 100%;
     height: auto;
     vertical-align: middle;
   }
-  main .photoLNE {
+  main .bigcontm .photoLNE {
     width: 100%;
     height: 480px;
     display: flex;
@@ -1061,18 +1179,66 @@ h1, h2, h3, h4 {
     align-items: center;
     margin-bottom: -19px;
   }
-  main .photoLNE .lnepic {
+  main .bigcontm .photoLNE .lnepic {
     max-width: 100%;
     height: auto;
     vertical-align: middle;
   }
-  main .resto {
+  main .bigcontm .foody {
+    width: 100%;
+    height: 280px;
+    margin-bottom: 0px;
+  }
+  main .bigcontm .foodyxl {
+    width: 100%;
+    height: 370px;
+    margin-bottom: 5px;
+  }
+  main .bigcontm .food1 {
+    animation: fadein1 800ms linear forwards;
+  }
+  main .bigcontm .food2 {
+    animation: fadein1 800ms 400ms linear forwards;
+  }
+  main .bigcontm .food3 {
+    animation: fadein1 800ms 800ms linear forwards;
+  }
+  main .bigcontm .food4 {
+    animation: fadein1 800ms 1200ms linear forwards;
+  }
+  main .bigcontm .food5 {
+    animation: fadein1 800ms 1600ms linear forwards;
+  }
+  main .bigcontm .food6 {
+    animation: fadein1 800ms 2000ms linear forwards;
+  }
+  main .bigcontm .food7 {
+    animation: fadein1 800ms 2400ms linear forwards;
+  }
+  main .bigcontm .food8 {
+    animation: fadein1 800ms 2800ms linear forwards;
+  }
+  main .bigcontm .food9 {
+    animation: fadein1 800ms 3200ms linear forwards;
+  }
+  main .bigcontm .food10 {
+    animation: fadein1 800ms 3200ms linear forwards;
+  }
+  main .bigcontm .food1, main .bigcontm .food2, main .bigcontm .food3, main .bigcontm .food4, main .bigcontm .food5, main .bigcontm .food6, main .bigcontm .food7, main .bigcontm .food8, main .bigcontm .food9, main .bigcontm .food10 {
+    width: 100%;
+    height: 80px;
+    opacity: 0;
+    background-color: transparent;
+    overflow-y: hidden;
+    margin-top: 0px;
+  }
+  main .bigcontm .resto {
     width: 100%;
     min-height: 880px;
     border-radius: 25px 25px 0px 0px;
     background-color: #f8f8f8;
   }
-  main .resto .restnom {
+  main .bigcontm .resto .restnom {
     width: 100%;
     height: 50px;
     box-sizing: border-box;
@@ -1082,16 +1248,16 @@ h1, h2, h3, h4 {
     padding-right: 30px;
     margin-top: 30px;
   }
-  main .resto .restnom .nom {
+  main .bigcontm .resto .restnom .nom {
     width: 85%;
     height: 45px;
     font-family: "shrikhand", cursive;
     font-size: 36px;
   }
-  main .resto .restnom .nom::first-letter {
+  main .bigcontm .resto .restnom .nom::first-letter {
     text-transform: uppercase;
   }
-  main .resto .entrees {
+  main .bigcontm .resto .entrees {
     box-sizing: border-box;
     width: 100%;
     height: 30px;
@@ -1104,31 +1270,31 @@ h1, h2, h3, h4 {
     margin-left: auto;
     margin-right: auto;
   }
-  main .resto .entrees .text {
+  main .bigcontm .resto .entrees .text {
     height: 40px;
     font-size: 18px;
     text-transform: uppercase;
   }
-  main .resto .entrees .barre {
+  main .bigcontm .resto .entrees .barre {
     width: 12%;
     height: 4px;
     background-color: #99E2D0;
   }
-  main .resto .food {
+  main .bigcontm .resto .food {
     animation: fadein 1500ms ease-out forwards;
   }
-  main .resto .food:hover > .food--resize {
+  main .bigcontm .resto .food:hover > .food--resize {
     animation: resizing 800ms forwards;
   }
-  main .resto .food:hover > .food--appears {
+  main .bigcontm .resto .food:hover > .food--appears {
     transform: translateX(0px);
     transition: transform 800ms;
   }
-  main .resto .food:hover > .food--appears > i {
+  main .bigcontm .resto .food:hover > .food--appears > i {
     transform: rotate(360deg);
     transition: transform 800ms;
   }
-  main .resto .food {
+  main .bigcontm .resto .food {
     width: 80%;
     height: 70px;
     box-sizing: border-box;
@@ -1138,13 +1304,13 @@ h1, h2, h3, h4 {
     margin-right: auto;
     padding-left: 5px;
     padding-top: 15px;
-    margin-top: 15px;
+    margin-top: 0px;
     border-radius: 10px;
     background-color: white;
     box-shadow: 3px 3px 3px 3px rgb(242, 236, 236);
     overflow: hidden;
   }
-  main .resto .food--resize {
+  main .bigcontm .resto .food--resize {
     min-width: 80%;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -1152,12 +1318,12 @@ h1, h2, h3, h4 {
     color: grey;
     font-size: 20px;
   }
-  main .resto .food--resize::first-line {
+  main .bigcontm .resto .food--resize::first-line {
     color: black;
     font-size: 22px;
     font-weight: bold;
   }
-  main .resto .food--move {
+  main .bigcontm .resto .food--move {
     box-sizing: border-box;
     min-width: 20%;
     font-size: 22px;
@@ -1167,10 +1333,10 @@ h1, h2, h3, h4 {
     margin-right: 3px;
     text-align: right;
   }
-  main .resto .food--move::first-line {
+  main .bigcontm .resto .food--move::first-line {
     font-size: 22px;
   }
-  main .resto .food--appears {
+  main .bigcontm .resto .food--appears {
     box-sizing: border-box;
     min-width: 70px;
     height: 132%;
@@ -1181,12 +1347,12 @@ h1, h2, h3, h4 {
     text-align: center;
     padding-top: 21px;
   }
-  main .resto .food--appears i {
+  main .bigcontm .resto .food--appears i {
     transform: rotate(0deg);
     transition: transform 500ms 200ms;
     color: white;
   }
-  main .resto .plats {
+  main .bigcontm .resto .plats {
     box-sizing: border-box;
     width: 100%;
     height: 30px;
@@ -1199,17 +1365,17 @@ h1, h2, h3, h4 {
     margin-left: auto;
     margin-right: auto;
   }
-  main .resto .plats .text {
+  main .bigcontm .resto .plats .text {
     height: 40px;
     font-size: 18px;
     text-transform: uppercase;
   }
-  main .resto .plats .barre {
+  main .bigcontm .resto .plats .barre {
     width: 12%;
     height: 4px;
     background-color: #99E2D0;
   }
-  main .resto .sucre {
+  main .bigcontm .resto .sucre {
     box-sizing: border-box;
     width: 100%;
     height: 30px;
@@ -1222,24 +1388,24 @@ h1, h2, h3, h4 {
     margin-left: auto;
     margin-right: auto;
   }
-  main .resto .sucre .text {
+  main .bigcontm .resto .sucre .text {
     height: 40px;
     font-size: 18px;
     text-transform: uppercase;
   }
-  main .resto .sucre .barre {
+  main .bigcontm .resto .sucre .barre {
     width: 12%;
     height: 4px;
     background-color: #99E2D0;
   }
-  main .resto .order {
+  main .bigcontm .resto .order {
     width: 100%;
     height: fit-content;
     text-align: center;
     margin-top: 40px;
     margin-bottom: 40px;
   }
-  main .resto .order .commande {
+  main .bigcontm .resto .order .commande {
     margin-left: auto;
     margin-right: auto;
     border-radius: 25px;
@@ -1252,11 +1418,12 @@ h1, h2, h3, h4 {
     padding-right: 30px;
     border: none;
   }
-  main .resto .order .commande:hover {
+  main .bigcontm .resto .order .commande:hover {
     opacity: 0.7;
     box-shadow: 3px 3px 3px 3px grey;
+    cursor: pointer;
   }
-  footer {
+  footer .bigcontf {
     box-sizing: border-box;
     width: 100%;
     height: fit-content;
@@ -1267,26 +1434,26 @@ h1, h2, h3, h4 {
     padding-bottom: 10px;
     cursor: default;
   }
-  footer p {
+  footer .bigcontf p {
     color: white;
     font-weight: bold;
     font-size: large;
     opacity: 0.3;
   }
-  footer p:hover {
+  footer .bigcontf p:hover {
     opacity: 1;
   }
-  footer a {
+  footer .bigcontf a {
     text-decoration: none;
     color: white;
     opacity: 0.3;
     font-weight: bold;
     font-size: large;
   }
-  footer a:hover {
+  footer .bigcontf a:hover {
     opacity: 1;
   }
-  footer .downlogoomf {
+  footer .bigcontf .downlogoomf {
     width: 30%;
     height: 40px;
     color: white;
@@ -1294,8 +1461,7 @@ h1, h2, h3, h4 {
   }
 }
 @media screen and (min-width: 992px) {
-  body {
-    max-width: 1540px;
+  body .bigcont {
     min-width: 992px;
     height: fit-content;
     margin-top: -10px;
@@ -1323,13 +1489,14 @@ h1, h2, h3, h4 {
   .accueil {
     animation: 12s appears forwards;
   }
-  header {
-    width: 100%;
+  header .bigconth {
+    width: 102%;
+    margin-left: -10px;
     box-sizing: border-box;
     background-color: #f8f8f8;
     padding-bottom: 20px;
   }
-  header .bandeau {
+  header .bigconth .bandeau {
     display: flex;
     justify-content: space-around;
     margin-top: 10px;
@@ -1338,7 +1505,7 @@ h1, h2, h3, h4 {
     height: 100px;
     padding-top: 25px;
   }
-  header .bandeau .arrow, header .bandeau .right {
+  header .bigconth .bandeau .arrow, header .bigconth .bandeau .right {
     box-sizing: border-box;
     width: 60px;
     height: 60px;
@@ -1348,18 +1515,18 @@ h1, h2, h3, h4 {
     color: black;
     padding-top: 6px;
   }
-  header .bandeau .arrow:hover, header .bandeau .right:hover {
+  header .bigconth .bandeau .arrow:hover, header .bigconth .bandeau .right:hover {
     color: #9356DC;
   }
-  header .bandeau .logoomf {
+  header .bigconth .bandeau .logoomf {
     width: 300px;
     height: 60px;
   }
-  header .entete {
+  header .bigconth .entete {
     width: 100%;
     height: 300px;
   }
-  header .entete .localisation {
+  header .bigconth .entete .localisation {
     margin-left: auto;
     margin-right: auto;
     width: 60%;
@@ -1369,12 +1536,12 @@ h1, h2, h3, h4 {
     background-color: rgb(208, 203, 203);
     padding-top: 5px;
   }
-  header .entete .localisation i {
+  header .bigconth .entete .localisation i {
     width: 20%;
     text-align: left;
     margin-left: 30px;
   }
-  header .entete .localisation .ville {
+  header .bigconth .entete .localisation .ville {
     width: 65%;
     margin-bottom: 10px;
     text-decoration: none;
@@ -1385,17 +1552,17 @@ h1, h2, h3, h4 {
     border: none;
     padding-left: 10px;
   }
-  header .entete .localisation .ville:focus {
+  header .bigconth .entete .localisation .ville:focus {
     outline: none;
   }
-  header .entete .text112 {
+  header .bigconth .entete .text112 {
     width: 100%;
     height: fit-content;
     display: flex;
     margin-top: 10px;
     margin-left: 5%;
   }
-  header .entete .text112 .text1 {
+  header .bigconth .entete .text112 .text1 {
     width: 50%;
     margin-left: auto;
     margin-right: auto;
@@ -1403,30 +1570,30 @@ h1, h2, h3, h4 {
     font-weight: bold;
     text-align: right;
   }
-  header .entete .text112 .text12 {
+  header .bigconth .entete .text112 .text12 {
     width: 50%;
     font-size: 30px;
     font-weight: bold;
     text-align: left;
     padding-left: 5px;
   }
-  header .entete .text221 {
+  header .bigconth .entete .text221 {
     width: 100%;
     display: flex;
     margin-left: 6%;
   }
-  header .entete .text221 .text2 {
+  header .bigconth .entete .text221 .text2 {
     width: 50%;
     font-size: 24px;
     text-align: right;
   }
-  header .entete .text221 .text21 {
+  header .bigconth .entete .text221 .text21 {
     width: 50%;
     font-size: 24px;
     text-align: left;
     padding-left: 3px;
   }
-  header .entete .discover {
+  header .bigconth .entete .discover {
     box-sizing: border-box;
     margin-top: 20px;
     width: 35%;
@@ -1440,52 +1607,53 @@ h1, h2, h3, h4 {
     font-weight: bold;
     background: linear-gradient(#FF79DA 5%, #9356DC);
   }
-  header .entete .discover:hover {
+  header .bigconth .entete .discover:hover {
     opacity: 0.6;
     box-shadow: 3px 3px 15px black;
   }
-  header .entete .discover .explore {
+  header .bigconth .entete .discover .explore {
     background-color: transparent;
     border: 0;
     color: white;
     font-size: 24px;
     font-weight: 600;
   }
-  header .entete .discover .explore:hover {
+  header .bigconth .entete .discover .explore:hover {
     cursor: pointer;
   }
-  main {
+  main .bigcontm {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    margin-left: -12px;
+    width: 101%;
     height: fit-content;
   }
-  main .fct {
+  main .bigcontm .fct {
     width: 100%;
     text-align: center;
     font-size: 36px;
     font-weight: bold;
     margin-left: 25px;
   }
-  main .ccd-mepge {
+  main .bigcontm .ccd-mepge {
     display: flex;
     justify-content: space-between;
     margin-top: 50px;
     margin-bottom: 50px;
   }
-  main .ccd-mep1 {
+  main .bigcontm .ccd-mep1 {
     width: 33%;
     height: fit-content;
   }
-  main .ccd-mep2 {
+  main .bigcontm .ccd-mep2 {
     width: 33%;
     height: fit-content;
   }
-  main .ccd-mep3 {
+  main .bigcontm .ccd-mep3 {
     width: 33%;
     height: fit-content;
   }
-  main .ccd {
+  main .bigcontm .ccd {
     position: relative;
     width: 100%;
     height: fit-content;
@@ -1495,13 +1663,13 @@ h1, h2, h3, h4 {
     font-size: 20px;
     cursor: pointer;
   }
-  main .ccd:hover {
+  main .bigcontm .ccd:hover {
     opacity: 0.6;
   }
-  main .ccd:hover .choirest {
+  main .bigcontm .ccd:hover .choirest {
     box-shadow: 5px 5px 5px 5px #b3b3b3;
   }
-  main .ccd .num {
+  main .bigcontm .ccd .num {
     margin-left: 45%;
     margin-top: -15px;
     position: absolute;
@@ -1517,7 +1685,7 @@ h1, h2, h3, h4 {
     padding-top: 5px;
     color: white;
   }
-  main .ccd .choirest {
+  main .bigcontm .ccd .choirest {
     box-sizing: border-box;
     width: 90%;
     height: 60px;
@@ -1530,28 +1698,31 @@ h1, h2, h3, h4 {
     border-radius: 18px;
     font-weight: bold;
   }
-  main .ccd .choirest i {
+  main .bigcontm .ccd .choirest i {
     color: #9356DC;
   }
-  main .lesrestos {
+  main .bigcontm .lesrestos {
     width: 100%;
     display: flex;
+    justify-content: space-around;
     flex-flow: wrap;
     height: fit-content;
     background-color: #f8f8f8;
     padding-bottom: 30px;
+    padding-right: 5%;
   }
-  main .lesrestos .rsts {
+  main .bigcontm .lesrestos .rsts {
     width: 100%;
-    font-size: 24px;
+    font-size: 36px;
     font-weight: bold;
-    margin-left: 25px;
+    text-align: center;
   }
-  main .restostick {
-    width: 22%;
+  main .bigcontm .restostick {
+    width: 42%;
     height: 240px;
-    min-width: 170px;
+    max-width: 420px;
     min-height: 150px;
+    overflow: hidden;
     background-color: white;
     border-radius: 15px;
     margin-left: auto;
@@ -1562,82 +1733,100 @@ h1, h2, h3, h4 {
     text-decoration: none;
     cursor: pointer;
   }
-  main .restostick:hover {
+  main .bigcontm .restostick:hover {
     opacity: 1.2;
-    width: 27%;
     box-shadow: 3px 3px 3px 3px grey;
   }
-  main .restostick:hover .LNE-pic, main .restostick:hover .LPG-pic, main .restostick:hover .ALF-pic, main .restostick:hover .DDS-pic {
+  main .bigcontm .restostick:hover .LNE-pic, main .bigcontm .restostick:hover .LPG-pic, main .bigcontm .restostick:hover .ALF-pic, main .bigcontm .restostick:hover .DDS-pic {
     opacity: 1;
   }
-  main .restostick .restolink {
+  main .bigcontm .restostick .restolink {
     width: 100%;
     height: 95%;
     margin-top: -15px;
     cursor: inherit;
   }
-  main .restostick :link {
+  main .bigcontm .restostick :link {
     text-decoration: none;
   }
-  main .LNE-pic {
+  main .bigcontm .LNE-pic {
+    position: relative;
     display: flex;
     align-items: center;
     overflow: hidden;
-    width: 100%;
-    height: 72%;
+    width: 102%;
+    height: 70%;
     min-height: 90px;
+    margin-bottom: 3px;
+    margin-left: -5px;
+    margin-top: -5px;
     margin-bottom: 3px;
     border-radius: 10px 10px 0 0;
     opacity: 0.6;
   }
-  main .LNE-pic img {
+  main .bigcontm .LNE-pic .new {
+    position: absolute;
+    width: 90px;
+    height: 23px;
+    background-color: #99E2D0;
+    color: #278870;
+    margin-bottom: 120px;
+    margin-left: 325px;
+    border-radius: 5px;
+    text-align: center;
+    padding-top: 5px;
+  }
+  main .bigcontm .LNE-pic img {
     max-width: 100%;
     height: auto;
     bottom: 0;
   }
-  main .LPG-pic, main .ALF-pic, main .DDS-pic {
+  main .bigcontm .LPG-pic, main .bigcontm .ALF-pic, main .bigcontm .DDS-pic {
+    position: relative;
     display: flex;
+    align-items: flex-end;
     overflow: hidden;
-    width: 100%;
-    height: 72%;
+    margin-left: -5px;
+    margin-top: -5px;
+    width: 102%;
+    height: 70%;
     min-height: 90px;
     margin-bottom: 3px;
     border-radius: 10px 10px 0 0;
     opacity: 0.6;
-    margin-right: -1%;
   }
-  main .new {
+  main .bigcontm .new {
+    position: absolute;
     width: 90px;
-    height: 25px;
+    height: 24px;
     background-color: #99E2D0;
     color: #278870;
-    margin-left: -100px;
-    margin-bottom: 125px;
+    margin-bottom: 128px;
+    margin-left: 325px;
     border-radius: 5px;
     text-align: center;
     padding-top: 4px;
   }
-  main img {
+  main .bigcontm img {
     width: 103%;
     height: auto;
     bottom: 0;
   }
-  main .lovit {
+  main .bigcontm .lovit {
     box-sizing: border-box;
     width: 30px;
     height: 45px;
     font-size: 22px;
     padding-top: 1px;
   }
-  main .lovit i {
+  main .bigcontm .lovit i {
     color: white;
     text-shadow: 1px 1px 4px black;
   }
-  main .lovit:hover > i {
-    font-size: 150%;
-    animation: heartcolor 3000ms ease-in-out forwards;
+  main .bigcontm .lovit:hover > i {
+    animation: heartcolor1 1000ms linear forwards;
   }
-  main .restolegend {
+  main .bigcontm .restolegend {
     display: flex;
     justify-content: space-between;
     padding-top: 12px;
@@ -1645,7 +1834,7 @@ h1, h2, h3, h4 {
     width: 98%;
     height: 30%;
   }
-  main .restaux {
+  main .bigcontm .restaux {
     display: flex;
     flex-direction: column;
     width: 95%;
@@ -1654,7 +1843,7 @@ h1, h2, h3, h4 {
     padding-left: 2%;
     padding-top: 15px;
   }
-  main .restaux .restotxt {
+  main .bigcontm .restaux .restotxt {
     box-sizing: border-box;
     width: 100%;
     min-height: 35%;
@@ -1663,51 +1852,51 @@ h1, h2, h3, h4 {
     font-weight: bold;
     border-radius: 10px;
   }
-  main .restaux .restotxt::first-letter {
+  main .bigcontm .restaux .restotxt::first-letter {
     text-transform: uppercase;
   }
-  main .restaux .rstxt2 {
+  main .bigcontm .restaux .rstxt2 {
     width: 100%;
     height: 35%;
     color: grey;
   }
-  main .photoALF {
+  main .bigcontm .photoALF {
     width: 100%;
     height: 10%;
     overflow: hidden;
     margin-bottom: -19px;
     height: 550px;
   }
-  main .photoALF .alfpic {
+  main .bigcontm .photoALF .alfpic {
     max-width: 100%;
     height: auto;
     vertical-align: middle;
   }
-  main .photoLPG {
+  main .bigcontm .photoLPG {
     width: 100%;
     height: 10%;
     overflow: hidden;
     margin-bottom: -19px;
     height: 550px;
   }
-  main .photoLPG .lpgpic {
+  main .bigcontm .photoLPG .lpgpic {
     max-width: 100%;
     height: auto;
     vertical-align: middle;
   }
-  main .photoLDS {
+  main .bigcontm .photoLDS {
     width: 100%;
     height: 10%;
     overflow: hidden;
     margin-bottom: -19px;
     height: 550px;
   }
-  main .photoLDS .ldspic {
+  main .bigcontm .photoLDS .ldspic {
     max-width: 100%;
     height: auto;
     vertical-align: middle;
   }
-  main .photoLNE {
+  main .bigcontm .photoLNE {
     width: 100%;
     height: 550px;
     display: flex;
@@ -1715,18 +1904,18 @@ h1, h2, h3, h4 {
     align-items: center;
     margin-bottom: -19px;
   }
-  main .photoLNE .lnepic {
+  main .bigcontm .photoLNE .lnepic {
     max-width: 100%;
     height: auto;
     vertical-align: middle;
   }
-  main .resto {
+  main .bigcontm .resto {
     width: 100%;
     min-height: 880px;
     border-radius: 25px 25px 0px 0px;
     background-color: #f8f8f8;
   }
-  main .resto .restnom {
+  main .bigcontm .resto .restnom {
     width: 100%;
     height: 50px;
     box-sizing: border-box;
@@ -1736,16 +1925,16 @@ h1, h2, h3, h4 {
     padding-right: 30px;
     margin-top: 30px;
   }
-  main .resto .restnom .nom {
+  main .bigcontm .resto .restnom .nom {
     width: 85%;
     height: 45px;
     font-family: "shrikhand", cursive;
     font-size: 36px;
   }
-  main .resto .restnom .nom::first-letter {
+  main .bigcontm .resto .restnom .nom::first-letter {
     text-transform: uppercase;
   }
-  main .resto .entrees {
+  main .bigcontm .resto .entrees {
     box-sizing: border-box;
     width: 100%;
     height: 30px;
@@ -1755,35 +1944,80 @@ h1, h2, h3, h4 {
     padding-left: 10px;
     width: 90%;
     margin-top: 60px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     margin-left: auto;
     margin-right: auto;
   }
-  main .resto .entrees .text {
+  main .bigcontm .resto .entrees .text {
     height: 40px;
     font-size: 18px;
     text-transform: uppercase;
   }
-  main .resto .entrees .barre {
+  main .bigcontm .resto .entrees .barre {
     width: 12%;
     height: 4px;
     background-color: #99E2D0;
   }
-  main .resto .food {
-    animation: fadein 1500ms ease-out forwards;
+  main .bigcontm .resto .foody {
+    width: 100%;
+    height: 380px;
+    margin-bottom: 5px;
   }
-  main .resto .food:hover > .food--resize {
+  main .bigcontm .resto .foodyxl {
+    width: 100%;
+    height: 500px;
+    margin-bottom: 5px;
+  }
+  main .bigcontm .resto .food1 {
+    animation: fadein1 800ms linear forwards;
+  }
+  main .bigcontm .resto .food2 {
+    animation: fadein1 800ms 400ms linear forwards;
+  }
+  main .bigcontm .resto .food3 {
+    animation: fadein1 800ms 800ms linear forwards;
+  }
+  main .bigcontm .resto .food4 {
+    animation: fadein1 800ms 1200ms linear forwards;
+  }
+  main .bigcontm .resto .food5 {
+    animation: fadein1 800ms 1600ms linear forwards;
+  }
+  main .bigcontm .resto .food6 {
+    animation: fadein1 800ms 2000ms linear forwards;
+  }
+  main .bigcontm .resto .food7 {
+    animation: fadein1 800ms 2400ms linear forwards;
+  }
+  main .bigcontm .resto .food8 {
+    animation: fadein1 800ms 2800ms linear forwards;
+  }
+  main .bigcontm .resto .food9 {
+    animation: fadein1 800ms 3200ms linear forwards;
+  }
+  main .bigcontm .resto .food10 {
+    animation: fadein1 800ms 3200ms linear forwards;
+  }
+  main .bigcontm .resto .food1, main .bigcontm .resto .food2, main .bigcontm .resto .food3, main .bigcontm .resto .food4, main .bigcontm .resto .food5, main .bigcontm .resto .food6, main .bigcontm .resto .food7, main .bigcontm .resto .food8, main .bigcontm .resto .food9, main .bigcontm .resto .food10 {
+    width: 100%;
+    height: 80px;
+    opacity: 0;
+    background-color: transparent;
+    overflow-y: hidden;
+    margin-top: 20px;
+  }
+  main .bigcontm .resto .food:hover > .food--resize {
     animation: resizing 800ms forwards;
   }
-  main .resto .food:hover > .food--appears {
+  main .bigcontm .resto .food:hover > .food--appears {
     transform: translateX(0px);
     transition: transform 800ms;
   }
-  main .resto .food:hover > .food--appears > i {
+  main .bigcontm .resto .food:hover > .food--appears > i {
     transform: rotate(360deg);
     transition: transform 800ms;
   }
-  main .resto .food {
+  main .bigcontm .resto .food {
     width: 65%;
     height: 70px;
     box-sizing: border-box;
@@ -1793,13 +2027,13 @@ h1, h2, h3, h4 {
     margin-right: auto;
     padding-left: 5px;
     padding-top: 15px;
-    margin-top: 15px;
     border-radius: 10px;
     background-color: white;
     box-shadow: 3px 3px 3px 3px rgb(242, 236, 236);
     overflow: hidden;
+    cursor: pointer;
   }
-  main .resto .food--resize {
+  main .bigcontm .resto .food--resize {
     min-width: 80%;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -1807,12 +2041,12 @@ h1, h2, h3, h4 {
     color: grey;
     font-size: 20px;
   }
-  main .resto .food--resize::first-line {
+  main .bigcontm .resto .food--resize::first-line {
     color: black;
     font-size: 22px;
     font-weight: bold;
   }
-  main .resto .food--move {
+  main .bigcontm .resto .food--move {
     box-sizing: border-box;
     min-width: 20%;
     font-size: 22px;
@@ -1822,10 +2056,10 @@ h1, h2, h3, h4 {
     margin-right: 3px;
     text-align: right;
   }
-  main .resto .food--move::first-line {
+  main .bigcontm .resto .food--move::first-line {
     font-size: 22px;
   }
-  main .resto .food--appears {
+  main .bigcontm .resto .food--appears {
     box-sizing: border-box;
     min-width: 70px;
     height: 132%;
@@ -1836,12 +2070,12 @@ h1, h2, h3, h4 {
     text-align: center;
     padding-top: 21px;
   }
-  main .resto .food--appears i {
+  main .bigcontm .resto .food--appears i {
     transform: rotate(0deg);
     transition: transform 500ms 200ms;
     color: white;
   }
-  main .resto .plats {
+  main .bigcontm .resto .plats {
     box-sizing: border-box;
     width: 100%;
     height: 30px;
@@ -1850,22 +2084,22 @@ h1, h2, h3, h4 {
     margin-top: 20px;
     padding-left: 10px;
     width: 90%;
-    margin-top: 60px;
-    margin-bottom: 30px;
+    margin-top: 0px;
+    margin-bottom: 20px;
     margin-left: auto;
     margin-right: auto;
   }
-  main .resto .plats .text {
+  main .bigcontm .resto .plats .text {
     height: 40px;
     font-size: 18px;
     text-transform: uppercase;
   }
-  main .resto .plats .barre {
+  main .bigcontm .resto .plats .barre {
     width: 12%;
     height: 4px;
     background-color: #99E2D0;
   }
-  main .resto .sucre {
+  main .bigcontm .resto .sucre {
     box-sizing: border-box;
     width: 100%;
     height: 30px;
@@ -1874,29 +2108,29 @@ h1, h2, h3, h4 {
     margin-top: 20px;
     padding-left: 10px;
     width: 90%;
-    margin-top: 60px;
-    margin-bottom: 30px;
+    margin-top: 0px;
+    margin-bottom: 20px;
     margin-left: auto;
     margin-right: auto;
   }
-  main .resto .sucre .text {
+  main .bigcontm .resto .sucre .text {
     height: 40px;
     font-size: 18px;
     text-transform: uppercase;
   }
-  main .resto .sucre .barre {
+  main .bigcontm .resto .sucre .barre {
     width: 12%;
     height: 4px;
     background-color: #99E2D0;
   }
-  main .resto .order {
+  main .bigcontm .resto .order {
     width: 100%;
     height: fit-content;
     text-align: center;
     margin-top: 40px;
     margin-bottom: 40px;
   }
-  main .resto .order .commande {
+  main .bigcontm .resto .order .commande {
     margin-left: auto;
     margin-right: auto;
     border-radius: 25px;
@@ -1909,42 +2143,49 @@ h1, h2, h3, h4 {
     padding-right: 30px;
     border: none;
   }
-  main .resto .order .commande:hover {
+  main .bigcontm .resto .order .commande:hover {
     opacity: 0.7;
     box-shadow: 3px 3px 3px 3px grey;
+    cursor: pointer;
   }
-  footer {
+  footer .bigcontf {
+    margin-top: 50px;
     box-sizing: border-box;
-    width: 100%;
+    width: 105%;
+    margin-left: auto;
+    margin-right: auto;
     height: fit-content;
     padding-bottom: 2%;
     background-color: black;
+    margin-left: -10px;
+    margin-bottom: -10px;
     padding-top: 25px;
     padding-left: 15px;
     text-align: center;
     cursor: default;
   }
-  footer p {
+  footer .bigcontf p {
     color: white;
     font-weight: bold;
     font-size: large;
     opacity: 0.3;
   }
-  footer p:hover {
+  footer .bigcontf p:hover {
     opacity: 1;
   }
-  footer a {
+  footer .bigcontf a {
     text-decoration: none;
     color: white;
     opacity: 0.3;
     font-weight: bold;
     font-size: large;
   }
-  footer a:hover {
+  footer .bigcontf a:hover {
     opacity: 1;
   }
-  footer .downlogoomf {
+  footer .bigcontf .downlogoomf {
     width: 30%;
+    max-width: 500px;
     height: 20%;
     color: white;
     filter: invert(100%);

@@ -1,5 +1,3 @@
-
-//* @media screen and (max-width: 420px){
 	
 @keyframes resizing {
     from{
@@ -35,6 +33,27 @@
 		 ;
     }
 }
+@keyframes heartcolor1 {
+    0%{
+        color: $clr-w;
+		font-size: 100%;
+        cursor: default;
+    }
+	50%{
+		color: $clr-1;
+		opacity: .4;
+		font-size: 150%;
+        cursor:default;
+		 
+	}
+    100%{
+        color: $clr-1;
+		opacity: 1;
+		font-size: 150%;
+        cursor:pointer;
+		 
+    }
+}
 @keyframes appears {
 	from{
 		opacity: 0;
@@ -42,6 +61,21 @@
 	to{
 		opacity: 1;
 	}
+}
+@keyframes fadein1 {
+	0% {
+        padding-top: 35px;
+        opacity:0;
+    }
+	50%{
+		padding-top: 25px;
+        opacity:0.5;
+	}
+
+    100% {
+        opacity: 1;
+        padding-top: 15px;
+    }
 }
 
 @keyframes fadein {
@@ -54,15 +88,13 @@
         padding-top: 15px;
     }
 }
+
 //*****************XXXXXXXXXXXXXXXXXXXXXXXXXX APPLICATION MOBILE XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX********************
 @media screen AND (max-width:690px){
-    
-
-//******************BODY ET SON CONTENU********************************
 
 body
+.bigcont
 {
-    max-width: 540px;
     min-width: 375px;
     height: fit-content;
 	@include mrglr-auto;
@@ -72,35 +104,37 @@ body
     opacity: 0;
     position: relative;
     transition: opacity linear 0.1s;   
-   
-        animation: 3s linear spinner ;
-        border: solid 3px $clr-2;
-        border-bottom-color: $clr-1;
-        border-radius: 50%;
-        content: "";
-        height: 40px;
-        left: 50%;
-        //*opacity: inherit;
-        position: absolute;
-        top: 50%;
-       transform: translate3d(-50%, -50%, 0);
-        transform-origin: center;
-        width: 40px;
+	animation: 3s linear spinner ;
+	border: solid 4px transparent;
+	border-bottom-color: $clr-1;
+	border-top-color: $clr-2;
+	border-radius: 50%;
+	content: "";
+	height: 40px;
+	left: 50%;
+	position: absolute;
+	top: 50%;
+	transform: translate3d(-50%, -50%, 0);
+	transform-origin: center;
+	width: 40px;
 }
 .accueil{
 	animation: 12s appears forwards;
 }
-//********************HEADER ET SON CONTENU*********************************
+
 header
+.bigconth
 {
-	width: 100%;
+	width: 104%;
+	margin-left: -10px;
+	margin-top: -10px;
+	background-color: lighten($color: $clr-4, $amount: 47%);
 	.bandeau{
 		display: flex;
 		justify-content: space-around;
 		width: 100%;
 		height: 50px;
-		padding-top: 5px;
-		background-color: lighten($color: $clr-4, $amount: 47%);
+		padding-top: 25px;
 		.arrow, .right{
 			box-sizing: border-box;
 			width: 25px;
@@ -123,7 +157,7 @@ header
 			height: 40px;
 			box-sizing: border-box;
 			font-size: 24px;
-			background-color: rgb(208, 203, 203) ;
+			background-color:lighten($color: $clr-4, $amount: 40%);
 			padding-top: 5px;
 			& i{
 				width: 30%;
@@ -172,7 +206,6 @@ header
 			font-size: 16px ;
 			text-align: center;
 		}
-
 		.discover{
 			box-sizing: border-box;
 			margin-top: 30px;
@@ -188,7 +221,6 @@ header
 			&:hover  {
 				opacity: .6;
 				box-shadow: 3px 3px 15px $clr-b;
-
 			}
 			.explore{
 				background-color: transparent;
@@ -204,11 +236,12 @@ header
 	}	
 	}
 	
-//**************************MAIN ET SON CONTENU*****************************************
-main{
+main
+.bigcontm{
 	display: flex;
 	flex-direction: column;
-	width: 100%;
+	width: 103%;
+	margin-left: -8px;
 	height: fit-content;
 	.fct{
 		font-size: 24px;
@@ -228,7 +261,7 @@ main{
 			opacity: .6;
 			.choirest {
 				box-shadow: 5px 5px 5px 5px lighten($color: $clr-4, $amount: 20%);
-					}
+			}
 		}
 		.num{
 			position: absolute;
@@ -260,7 +293,6 @@ main{
 				color: $clr-1;
 			}
 		}
-		
 	}
 	.lesrestos{
 		width: 100%;
@@ -278,6 +310,7 @@ main{
             width: 85%;
             height: 240px;
             min-width: 170px;
+			max-width: 500px;
             min-height: 150px;
             background-color: $clr-w;
             border-radius: 15px;
@@ -289,7 +322,6 @@ main{
 			cursor: pointer;
 			&:hover{
 				box-shadow:3px 3px 3px 3px $clr-4;
-
 			}
 			.restolink{
 				width: 100%;
@@ -357,7 +389,7 @@ main{
 				text-shadow: 1px 1px 4px $clr-b;
 			}
 			&:hover > i{
-				animation: heartcolor 3000ms ease-in-out forwards;
+				animation: heartcolor 2000ms ease-in-out forwards;
 			} 
 			}  
         .restolegend
@@ -372,11 +404,11 @@ main{
 		.restaux{
 			display: flex;
 			flex-direction: column;
-			width: 65%;
+			width: 70%;
 			height: 80%;
 			font-size: 20px;
 			padding-left: 2%;
-			padding-top: 15px;
+			padding-top: 0px;
 			& .restotxt
 			{
 				box-sizing: border-box;
@@ -426,11 +458,61 @@ main{
 			@include photo;
 		}
 	}
+	.foody{
+		width: 100%;
+		height: 300px;
+		margin-bottom: 0px;
+	}
+	.foodyxl{
+		width: 100%;
+		height: 400px;
+		margin-bottom: 5px;
+	}
+	.food1{
+		animation: fadein1 800ms linear forwards;
+	}
+	.food2{
+		animation: fadein1 800ms 400ms linear forwards;
+	}
+	.food3{
+		animation: fadein1 800ms 800ms  linear forwards;
+	}
+	.food4{
+		animation: fadein1 800ms 1200ms linear forwards;
+	}
+	.food5{
+		animation: fadein1 800ms 1600ms linear forwards;
+	}
+	.food6{
+		
+		animation: fadein1 800ms 2000ms linear forwards;
+	}
+	.food7{
+		animation: fadein1 800ms 2400ms linear forwards;
+	}
+	.food8{
+		animation: fadein1 800ms 2800ms  linear forwards;
+	}
+	.food9{
+		animation: fadein1 800ms 3200ms linear forwards;
+	}
+	.food10{
+		animation: fadein1 800ms 3200ms linear forwards;
+	}
+	.food1, .food2, .food3, .food4, .food5, .food6, .food7, .food8, .food9, .food10{
+		width: 100%;
+		height: 80px;
+		opacity: 0;
+		background-color: transparent;
+		overflow-y: hidden;
+		margin-top: 0px;
+		}
 	.resto{
 		width: 100%;
 		min-height: 880px;
 		border-radius: 25px 25px 0px 0px;
 		background-color: lighten($color: $clr-4, $amount: 47%);
+		margin-top: 40px;
 		.restnom{
 			width: 100%;
 			height: 50px;
@@ -484,11 +566,12 @@ main{
 			@include mrglr-auto;
 			padding-left: 5px;
 			padding-top: 15px;
-			margin-top: 15px;
+			margin-top: 0px;
 			border-radius: 10px;
 			background-color: $clr-w;
 			box-shadow: 3px 3px 3px 3px rgb(242, 236, 236);
 			overflow: hidden;
+			cursor: pointer;
 			&--resize{
 				min-width: 80%;
 				text-overflow: ellipsis;
@@ -571,14 +654,21 @@ main{
 				&:hover { 
 				opacity: .7;
 				box-shadow: 3px 3px 3px 3px $clr-4;	
+				cursor: pointer;
 				}
 			}
 		}
 	}
 }
-footer{
+
+footer
+.bigcontf{
 	box-sizing: border-box;
-	width: 100%;
+	width: 104%;
+	overflow: hidden;
+	margin-left: -10px;
+	margin-bottom: -10px;
+	align-items: center;
 	height: 220px;
 	background-color: $clr-b;
 	padding-top: 25px;
@@ -594,23 +684,23 @@ footer{
 	}
 .downlogoomf{
 	width:30%;
-	height: 25px;
+	max-width: 250px;
+	min-width: 160px;
+	height: 15%;
 	color: $clr-w;
 	filter: invert(100%);
 }
 }
-}
+} //*****************XXXXXXXXXXXXXXXXXXXXXXXX FIN APPLICATION MOBILE XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX********************
 
 
 //*****************XXXXXXXXXXXXXXXXXXXXXXXXXX APPLICATION TABLETTE XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX********************
 @media screen AND (min-width: 691px) and (max-width: 991px){
-    
-	
-	//******************BODY ET SON CONTENU********************************
-	
+ 
 	body
+	.bigcont
 	{
-		max-width: 860px;
+		
 		min-width: 451px;
 		height: fit-content;
 		margin-top: -10px;
@@ -621,8 +711,9 @@ footer{
 		opacity: 0;
 		position: relative;
 		transition: opacity linear 0.1s;   
-		animation: 3s linear spinner ;
-		border: solid 3px $clr-2;
+		animation: 4s linear spinner ;
+		border: solid 5px transparent;
+		border-top-color: $clr-2;
 		border-bottom-color: $clr-1;
 		border-radius: 50%;
 		content: "";
@@ -637,14 +728,17 @@ footer{
 	.accueil{
 		animation: 12s appears forwards;
 	}
-	//********************HEADER ET SON CONTENU*********************************
+
 	header
+	.bigconth
 	{
-		width: 100%;
+		overflow: hidden;
+		width: 103%;
+		margin-left: -8px;
+		height: fit-content;
 		box-sizing: border-box;
 		background-color: lighten($color: $clr-4, $amount: 47%);
-		padding-bottom: 20px;
-
+		padding-bottom: 30px;
 		.bandeau{
 			display: flex;
 			justify-content: space-around;
@@ -653,7 +747,6 @@ footer{
 			width: 100%;
 			height: 100px;
 			padding-top: 25px;
-			//*background-color: lighten($color: $clr-4, $amount: 47%);
 			.arrow, .right{
 				box-sizing: border-box;
 				width: 60px;
@@ -665,7 +758,6 @@ footer{
 				padding-top: 6px;	
 				&:hover{
 					color: $clr-1;
-					
 				}		
 			}
 			.logoomf{
@@ -676,13 +768,12 @@ footer{
 		.entete{
 			width: 100%;
 			height: 250px;
-			//*background-color: lighten($color: $clr-4, $amount: 47%);
 			.localisation{
 				@include mrglr-auto;
 				width: 60%;
 				height: 50px;
 				box-sizing: border-box;
-				font-size: 30px;
+				font-size: 26px;
 				background-color: rgb(208, 203, 203) ;
 				padding-top: 5px;
 				& i{
@@ -724,7 +815,6 @@ footer{
 					font-weight: bold;
 					text-align: left;
 					padding-left: 5px;
-
 				}
 			}
 			.text221{
@@ -758,7 +848,7 @@ footer{
 				&:hover  {
 					opacity: .6;
 					box-shadow: 3px 3px 15px $clr-b;
-	
+					cursor: pointer;
 				}
 				.explore{
 					background-color: transparent;
@@ -774,8 +864,8 @@ footer{
 		}	
 		}
 		
-	//**************************MAIN ET SON CONTENU*****************************************
-	main{
+	main
+	.bigcontm{
 		display: flex;
 		flex-direction: column;
 		width: 100%;
@@ -867,10 +957,11 @@ footer{
 		}
 		.restostick
 			{
-				width: 45%;
+				width: 42%;
 				height: 240px;
-				min-width: 170px;
+				min-width: 380px;
 				min-height: 150px;
+				overflow: hidden;
 				background-color: $clr-w;
 				border-radius: 15px;
 				@include mrglr-auto;
@@ -881,7 +972,6 @@ footer{
 				cursor: pointer;
 				&:hover{
 					box-shadow:3px 3px 3px 3px $clr-4;
-	
 				}
 				.restolink{
 					width: 100%;
@@ -896,14 +986,29 @@ footer{
 			}
 			.LNE-pic
 			{
+				position: relative;
 				display: flex;
 				align-items:center;
 				overflow: hidden;
-				width:100%;
+				width:102%;
 				height: 72%;
+				margin-left: -5px;
+				margin-top: -5px;
 				min-height: 90px;
 				margin-bottom: 3px;
 				border-radius: 10px 10px 0 0;
+				& .new{
+					position: absolute;
+					width: 90px;
+					height: 25px;
+					background-color: $clr-3;
+					color:  darken($clr-3, $amount: 40%);
+					margin-left: 75%;
+					margin-bottom: 124px;
+					border-radius: 5px;
+					text-align: center;
+					padding-top: 5px;
+				}
 				& img{
 					max-width: 100%;
 					height: auto;
@@ -912,25 +1017,28 @@ footer{
 			}
 			.LPG-pic, .ALF-pic, .DDS-pic
 			{
+				position: relative;
 				display: flex;
 				align-items:flex-end;
 				overflow: hidden;
-				width:100%;
-				height: 70%;
+				width:102%;
+				margin-left: -5px;
+				margin-top: -5px;
+				height: 72%;
 				min-height: 90px;
-				margin-bottom: 3px;
+				margin-bottom: 0px;
 				border-radius: 10px 10px 0 0;
-			}
 			& .new{
+				position: absolute;
 				width: 90px;
 				height: 25px;
 				background-color: $clr-3;
 				color:  darken($clr-3, $amount: 40%);
-				margin-left: -100px;
-				margin-bottom: 125px;
+				margin-left: 75%;
+				margin-bottom: 133px;
 				border-radius: 5px;
 				text-align: center;
-				padding-top: 4px;
+				padding-top: 5px;
 			}
 			& img 
 			{
@@ -938,6 +1046,7 @@ footer{
 				height: auto;
 				bottom: 0;
 			}
+		}
 			.lovit{
 				box-sizing: border-box;
 				width: 40px;
@@ -964,11 +1073,11 @@ footer{
 			.restaux{
 				display: flex;
 				flex-direction: column;
-				width: 65%;
+				width: 90%;
 				height: 80%;
 				font-size: 20px;
 				padding-left: 2%;
-				padding-top: 15px;
+				padding-top: 0px;
 				& .restotxt
 				{
 					box-sizing: border-box;
@@ -1017,11 +1126,59 @@ footer{
 			overflow: hidden;
 			align-items: center;
 			margin-bottom: -19px;
-			
 			.lnepic{
 				@include photo;
 			}
 		}
+		.foody{
+			width: 100%;
+			height: 280px;
+			margin-bottom: 0px;
+		}
+		.foodyxl{
+			width: 100%;
+			height: 370px;
+			margin-bottom: 5px;
+		}
+		.food1{
+			animation: fadein1 800ms linear forwards;
+		}
+		.food2{
+			animation: fadein1 800ms 400ms linear forwards;
+		}
+		.food3{
+			animation: fadein1 800ms 800ms  linear forwards;
+		}
+		.food4{
+			animation: fadein1 800ms 1200ms linear forwards;
+		}
+		.food5{
+			animation: fadein1 800ms 1600ms linear forwards;
+		}
+		.food6{
+			
+			animation: fadein1 800ms 2000ms linear forwards;
+		}
+		.food7{
+			animation: fadein1 800ms 2400ms linear forwards;
+		}
+		.food8{
+			animation: fadein1 800ms 2800ms  linear forwards;
+		}
+		.food9{
+			animation: fadein1 800ms 3200ms linear forwards;
+		}
+		.food10{
+			animation: fadein1 800ms 3200ms linear forwards;
+		}
+		.food1, .food2, .food3, .food4, .food5, .food6, .food7, .food8, .food9, .food10{
+			width: 100%;
+			height: 80px;
+			opacity: 0;
+			background-color: transparent;
+			overflow-y: hidden;
+			margin-top: 0px;
+			}
 		.resto{
 			width: 100%;
 			min-height: 880px;
@@ -1083,7 +1240,7 @@ footer{
 				@include mrglr-auto;
 				padding-left: 5px;
 				padding-top: 15px;
-				margin-top: 15px;
+				margin-top: 0px;
 				border-radius: 10px;
 				background-color: $clr-w;
 				box-shadow: 3px 3px 3px 3px rgb(242, 236, 236);
@@ -1177,12 +1334,14 @@ footer{
 					&:hover { 
 					opacity: .7;
 					box-shadow: 3px 3px 3px 3px $clr-4;	
+					cursor: pointer;
 					}
 				}
 			}
 		}
 	}
-	footer{
+	footer
+	.bigcontf{
 		box-sizing: border-box;
 		width: 100%;
 		height: fit-content;
@@ -1218,23 +1377,19 @@ footer{
 		filter: invert(100%);
 	}
 	}
-	}
+	}//*****************XXXXXXXXXXXXXXXXXXXXXXXXXX FIN APPLICATION TABLETTE XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX********************
 
 
-	//*****************XXXXXXXXXXXXXXXXXXXXXXXXXX APPLICATION ORDINATEUR XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX********************
+//*****************XXXXXXXXXXXXXXXXXXXXXXXXXX APPLICATION ORDINATEUR XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX********************
 @media screen AND (min-width: 992px) {
-    
-		
-	//******************BODY ET SON CONTENU********************************
 	
-	body
-	{
-		max-width: 1540px;
+body	 
+	.bigcont{
 		min-width: 992px;
 		height: fit-content;
 		margin-top: -10px;
 		@include mrglr-auto;
-	} 
+	}
 	.spinload {
 		height: 20px;
 		opacity: 0;
@@ -1256,14 +1411,15 @@ footer{
 	.accueil{
 		animation: 12s appears forwards;
 	}
-	//********************HEADER ET SON CONTENU*********************************
+
 	header
+	.bigconth
 	{
-		width: 100%;
+		width: 102%;
+		margin-left: -10px;
 		box-sizing: border-box;
 		background-color: lighten($color: $clr-4, $amount: 47%);
 		padding-bottom: 20px;
-
 		.bandeau{
 			display: flex;
 			justify-content: space-around;
@@ -1272,7 +1428,6 @@ footer{
 			width: 100%;
 			height: 100px;
 			padding-top: 25px;
-			//*background-color: lighten($color: $clr-4, $amount: 47%);
 			.arrow, .right{
 				box-sizing: border-box;
 				width: 60px;
@@ -1284,7 +1439,6 @@ footer{
 				padding-top: 6px;	
 				&:hover{
 					color: $clr-1;
-					
 				}		
 			}
 			.logoomf{
@@ -1295,7 +1449,6 @@ footer{
 		.entete{
 			width: 100%;
 			height: 300px;
-			//*background-color: lighten($color: $clr-4, $amount: 47%);
 			.localisation{
 				@include mrglr-auto;
 				width: 60%;
@@ -1343,7 +1496,6 @@ footer{
 					font-weight: bold;
 					text-align: left;
 					padding-left: 5px;
-
 				}
 			}
 			.text221{
@@ -1377,7 +1529,6 @@ footer{
 				&:hover  {
 					opacity: .6;
 					box-shadow: 3px 3px 15px $clr-b;
-	
 				}
 				.explore{
 					background-color: transparent;
@@ -1393,11 +1544,13 @@ footer{
 		}	
 		}
 		
-	//**************************MAIN ET SON CONTENU*****************************************
-	main{
+	main
+	.bigcontm
+	{
 		display: flex;
 		flex-direction: column;
-		width: 100%;
+		margin-left: -12px;
+		width: 101%;
 		height: fit-content;
 		.fct{
 			width: 100%;
@@ -1415,31 +1568,22 @@ footer{
 		.ccd-mep1{
 			width: 33%;
 			height: fit-content;
-			//*display: flex;
 		}
 		.ccd-mep2{
 			width: 33%;
 			height: fit-content;
-			//*display: flex;
-			//*justify-content: space-around;
 		}
 		.ccd-mep3{
 			width: 33%;
 			height: fit-content;
-			//*display: flex;
-			//*justify-content: right;
 		}
 		.ccd{
 			position: relative;
 			width: 100%;
-			//*max-width: 450px;
-			height: fit-content;
-			//*display: flex;
-			
+			height: fit-content;			
 			margin-right: -1%;
 			margin-left: 3%;
 			margin-bottom: 30px;
-
 			font-size: 20px;
 			cursor: pointer;
 			&:hover{ 
@@ -1451,7 +1595,6 @@ footer{
 			.num{
 				margin-left: 45%;
 				margin-top: -15px;
-
 				position: absolute;
 				box-sizing: border-box;
 				font-size: 15px;
@@ -1481,28 +1624,30 @@ footer{
 					color: $clr-1;
 				}
 			}
-			
 		}
 		.lesrestos{
 			width: 100%;
 			display: flex;
+			justify-content: space-around;
 			flex-flow: wrap;
 			height: fit-content;
 			background-color: lighten($color: $clr-4, $amount: 47%);
 			padding-bottom: 30px;
+			padding-right: 5%;
 			.rsts{
 				width: 100%;
-				font-size: 24px;
+				font-size: 36px;
 				font-weight: bold;
-				margin-left: 25px;
+				text-align: center;
 			}
 		}
 		.restostick
 			{
-				width: 22%;
+				width: 42%;
 				height: 240px;
-				min-width: 170px;
+				max-width: 420px;
 				min-height: 150px;
+				overflow:hidden;
 				background-color: $clr-w;
 				border-radius: 15px;
 				@include mrglr-auto;
@@ -1513,12 +1658,10 @@ footer{
 				cursor: pointer;
 				&:hover{
 					opacity: 1.2;
-					width: 27%;
 					box-shadow:3px 3px 3px 3px $clr-4;
 					.LNE-pic, .LPG-pic, .ALF-pic, .DDS-pic {
 						opacity: 1;
 					}
-	
 				}
 				.restolink{
 					width: 100%;
@@ -1533,43 +1676,60 @@ footer{
 			}
 			.LNE-pic
 			{
+				position: relative;
 				display: flex;
 				align-items:center;
 				overflow: hidden;
-				width:100%;
-				height: 72%;
+				width:102%;
+				height: 70%;
 				min-height: 90px;
+				margin-bottom: 3px;
+				margin-left: -5px;
+				margin-top: -5px;
 				margin-bottom: 3px;
 				border-radius: 10px 10px 0 0;
 				opacity: 0.6;
+				& .new{
+					position: absolute;
+					width: 90px;
+					height: 23px;
+					background-color: $clr-3;
+					color:  darken($clr-3, $amount: 40%);
+					margin-bottom: 120px;
+					margin-left: 325px;
+					border-radius: 5px;
+					text-align: center;
+					padding-top: 5px;
+				}
 				& img{
 					max-width: 100%;
 					height: auto;
 					bottom: 0;
-					
 				}
 			}
 			.LPG-pic, .ALF-pic, .DDS-pic
 			{
+				position: relative;
 				display: flex;
-				//*align-items:flex-end;
+				align-items:flex-end;
 				overflow: hidden;
-				
-				width:100%;
-				height: 72%;
+				margin-left: -5px;
+				margin-top: -5px;
+				width:102%;
+				height: 70%;
 				min-height: 90px;
 				margin-bottom: 3px;
 				border-radius: 10px 10px 0 0;
 				opacity: 0.6;
-				margin-right: -1%;
 			}
 			& .new{
+				position: absolute;
 				width: 90px;
-				height: 25px;
+				height: 24px;
 				background-color: $clr-3;
 				color:  darken($clr-3, $amount: 40%);
-				margin-left: -100px;
-				margin-bottom: 125px;
+				margin-bottom: 128px;
+				margin-left: 325px;
 				border-radius: 5px;
 				text-align: center;
 				padding-top: 4px;
@@ -1591,8 +1751,7 @@ footer{
 					text-shadow: 1px 1px 4px $clr-b;
 				}
 				&:hover > i{
-					font-size: 150%;
-					animation: heartcolor 3000ms ease-in-out forwards;
+					animation: heartcolor1 1000ms linear forwards;
 				} 
 				}  
 			.restolegend
@@ -1621,7 +1780,6 @@ footer{
 					color: $clr-b;
 					font-weight: bold;
 					border-radius: 10px;
-					//*padding: 1% 1% 1% 1%;
 					&::first-letter{
 						text-transform: uppercase;
 					}
@@ -1660,7 +1818,6 @@ footer{
 			overflow: hidden;
 			align-items: center;
 			margin-bottom: -19px;
-			
 			.lnepic{
 				@include photo;
 			}
@@ -1693,7 +1850,7 @@ footer{
 				@include category;
 				width: 90%;
 				margin-top: 60px;
-				margin-bottom: 30px;
+				margin-bottom: 20px;
 				@include mrglr-auto;
 				.text{
 					@include catext;
@@ -1702,8 +1859,57 @@ footer{
 					@include catbarre;
 				}
 			}
+	.foody{
+		width: 100%;
+		height: 380px;
+		margin-bottom: 5px;
+	}
+	.foodyxl{
+		width: 100%;
+		height: 500px;
+		margin-bottom: 5px;
+	}
+
+	.food1{
+		animation: fadein1 800ms linear forwards;
+	}
+	.food2{
+		animation: fadein1 800ms 400ms linear forwards;
+	}
+	.food3{
+		animation: fadein1 800ms 800ms  linear forwards;
+	}
+	.food4{
+		animation: fadein1 800ms 1200ms linear forwards;
+	}
+	.food5{
+		animation: fadein1 800ms 1600ms linear forwards;
+	}
+	.food6{
+		
+		animation: fadein1 800ms 2000ms linear forwards;
+	}
+	.food7{
+		animation: fadein1 800ms 2400ms linear forwards;
+	}
+	.food8{
+		animation: fadein1 800ms 2800ms  linear forwards;
+	}
+	.food9{
+		animation: fadein1 800ms 3200ms linear forwards;
+	}
+	.food10{
+		animation: fadein1 800ms 3200ms linear forwards;
+	}
+	.food1, .food2, .food3, .food4, .food5, .food6, .food7, .food8, .food9, .food10{
+		width: 100%;
+		height: 80px;
+		opacity: 0;
+		background-color: transparent;
+		overflow-y: hidden;
+		margin-top: 20px;
+		}
 			.food {
-				animation: fadein 1500ms ease-out forwards;
 				&:hover {
 					& > .food--resize {
 						animation: resizing 800ms forwards;
@@ -1727,11 +1933,11 @@ footer{
 				@include mrglr-auto;
 				padding-left: 5px;
 				padding-top: 15px;
-				margin-top: 15px;
 				border-radius: 10px;
 				background-color: $clr-w;
 				box-shadow: 3px 3px 3px 3px rgb(242, 236, 236);
 				overflow: hidden;
+				cursor: pointer;
 				&--resize{
 					min-width: 80%;
 					text-overflow: ellipsis;
@@ -1778,10 +1984,11 @@ footer{
 			.plats{
 				@include category;
 				width: 90%;
-				margin-top: 60px;
-				margin-bottom: 30px;
+				margin-top: 0px;
+				margin-bottom: 20px;
 				@include mrglr-auto;
 				.text{
+					
 					@include catext;
 				}
 				.barre{
@@ -1791,8 +1998,8 @@ footer{
 			.sucre{
 				@include category;
 				width: 90%;
-				margin-top: 60px;
-				margin-bottom: 30px;
+				margin-top: 0px;
+				margin-bottom: 20px;
 				@include mrglr-auto;
 				.text{
 					@include catext;
@@ -1807,7 +2014,6 @@ footer{
 				text-align: center;
 				margin-top: 40px;
 				margin-bottom: 40px;
-	
 				.commande{
 					@include mrglr-auto;
 					border-radius: 25px;
@@ -1819,21 +2025,27 @@ footer{
 					padding-left: 30px;
 					padding-right: 30px;
 					border: none;		
-	
 					&:hover { 
 					opacity: .7;
 					box-shadow: 3px 3px 3px 3px $clr-4;	
+					cursor: pointer;
 					}
 				}
 			}
 		}
 	}
-	footer{
+	footer
+	.bigcontf
+	{
+		margin-top: 50px;
 		box-sizing: border-box;
-		width: 100%;
+		width: 105%;
+		@include mrglr-auto;
 		height: fit-content;
 		padding-bottom: 2%;
 		background-color: $clr-b;
+		margin-left: -10px;
+		margin-bottom: -10px;
 		padding-top: 25px;
 		padding-left: 15px;
 		text-align: center;
@@ -1859,11 +2071,12 @@ footer{
 		}
 	.downlogoomf{
 		width:30%;
+		max-width: 500px;
 		height: 20%;
 		color: $clr-w;
 		filter: invert(100%);
 	}
 	}
-	}
+	}//*****************XXXXXXXXXXXXXXXXXXXXXXXXXX FIN APPLICATION ORDINATEUR XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX********************
 
 	
