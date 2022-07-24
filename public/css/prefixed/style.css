@@ -198,7 +198,7 @@ h1, h2, h3, h4 {
 }
 @media screen and (max-width: 690px) {
   body .bigcont {
-    min-width: 375px;
+    min-width: 360px;
     height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
