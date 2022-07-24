@@ -509,7 +509,8 @@ main
 		}
 	.resto{
 		width: 100%;
-		min-height: 880px;
+		height: fit-content;
+		//*min-height: 880px;
 		border-radius: 25px 25px 0px 0px;
 		background-color: lighten($color: $clr-4, $amount: 47%);
 		margin-top: 40px;
