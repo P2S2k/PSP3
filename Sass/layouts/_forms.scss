@@ -1,3 +1,5 @@
+
+//* @media screen and (max-width: 420px){
 	
 @keyframes resizing {
     from{
@@ -89,15 +91,33 @@
     }
 }
 
+@keyframes fadein2 {
+	
+	
+	0% {
+		
+        padding-top: 50px;
+        opacity:0;
+    }
+	
+    100%{
+        opacity: 1;
+        padding-top: 15px;
+    }
+	
+}
 //*****************XXXXXXXXXXXXXXXXXXXXXXXXXX APPLICATION MOBILE XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX********************
 @media screen AND (max-width:690px){
+    
+
+//******************BODY ET SON CONTENU********************************
 
 body
 .bigcont
 {
     min-width: 350px;
     height: fit-content;
-	@include mrglr-auto;
+	//*@include mrglr-auto;
 } 
 .spinload {
 	height: 20px;
@@ -110,18 +130,18 @@ body
 	border-top-color: $clr-2;
 	border-radius: 50%;
 	content: "";
-	height: 40px;
+	height: 100px;
 	left: 50%;
 	position: absolute;
 	top: 50%;
 	transform: translate3d(-50%, -50%, 0);
 	transform-origin: center;
-	width: 40px;
+	width: 100px;
 }
 .accueil{
 	animation: 12s appears forwards;
 }
-
+//********************HEADER ET SON CONTENU*********************************
 header
 .bigconth
 {
@@ -129,12 +149,14 @@ header
 	margin-left: -10px;
 	margin-top: -10px;
 	background-color: lighten($color: $clr-4, $amount: 47%);
+	
 	.bandeau{
 		display: flex;
 		justify-content: space-around;
 		width: 100%;
 		height: 50px;
 		padding-top: 25px;
+		
 		.arrow, .right{
 			box-sizing: border-box;
 			width: 25px;
@@ -206,6 +228,7 @@ header
 			font-size: 16px ;
 			text-align: center;
 		}
+
 		.discover{
 			box-sizing: border-box;
 			margin-top: 30px;
@@ -221,6 +244,7 @@ header
 			&:hover  {
 				opacity: .6;
 				box-shadow: 3px 3px 15px $clr-b;
+
 			}
 			.explore{
 				background-color: transparent;
@@ -236,6 +260,7 @@ header
 	}	
 	}
 	
+//**************************MAIN ET SON CONTENU*****************************************
 main
 .bigcontm{
 	display: flex;
@@ -261,7 +286,7 @@ main
 			opacity: .6;
 			.choirest {
 				box-shadow: 5px 5px 5px 5px lighten($color: $clr-4, $amount: 20%);
-			}
+					}
 		}
 		.num{
 			position: absolute;
@@ -293,6 +318,7 @@ main
 				color: $clr-1;
 			}
 		}
+		
 	}
 	.lesrestos{
 		width: 100%;
@@ -322,6 +348,7 @@ main
 			cursor: pointer;
 			&:hover{
 				box-shadow:3px 3px 3px 3px $clr-4;
+
 			}
 			.restolink{
 				width: 100%;
@@ -448,12 +475,15 @@ main
 		}
 	}
 	.photoLNE{
+		@include cadrephoto;
+		/*
 		width: 100%;
 		height: 250px;
 		display: flex; 
 		overflow: hidden;
         align-items: center;
 		margin-bottom: -19px;
+		*/
 		.lnepic{
 			@include photo;
 		}
@@ -468,52 +498,56 @@ main
 		height: 400px;
 		margin-bottom: 5px;
 	}
-	.food1{
-		animation: fadein1 800ms linear forwards;
-	}
-	.food2{
-		animation: fadein1 800ms 400ms linear forwards;
-	}
-	.food3{
-		animation: fadein1 800ms 800ms  linear forwards;
-	}
-	.food4{
-		animation: fadein1 800ms 1200ms linear forwards;
-	}
-	.food5{
-		animation: fadein1 800ms 1600ms linear forwards;
-	}
-	.food6{
-		
-		animation: fadein1 800ms 2000ms linear forwards;
-	}
-	.food7{
-		animation: fadein1 800ms 2400ms linear forwards;
-	}
-	.food8{
-		animation: fadein1 800ms 2800ms  linear forwards;
-	}
-	.food9{
-		animation: fadein1 800ms 3200ms linear forwards;
-	}
-	.food10{
-		animation: fadein1 800ms 3200ms linear forwards;
-	}
-	.food1, .food2, .food3, .food4, .food5, .food6, .food7, .food8, .food9, .food10{
-		width: 100%;
-		height: 80px;
-		opacity: 0;
-		background-color: transparent;
-		overflow-y: hidden;
-		margin-top: 0px;
-		}
+	
+				.food1{
+					animation: fadein1 800ms linear forwards;
+				}
+				.food2{
+					animation: fadein1 800ms 400ms linear forwards;
+				}
+				.food3{
+					animation: fadein1 800ms 800ms  linear forwards;
+				}
+				.food4{
+					animation: fadein1 800ms 1200ms linear forwards;
+				}
+				.food5{
+					animation: fadein1 800ms 1600ms linear forwards;
+				}
+				.food6{
+					
+					animation: fadein1 800ms 2000ms linear forwards;
+				}
+				.food7{
+					animation: fadein1 800ms 2400ms linear forwards;
+				}
+				.food8{
+					animation: fadein1 800ms 2800ms  linear forwards;
+				}
+				.food9{
+					animation: fadein1 800ms 3200ms linear forwards;
+				}
+				.food10{
+					animation: fadein1 800ms 3200ms linear forwards;
+				}
+	
+	
+				.food1, .food2, .food3, .food4, .food5, .food6, .food7, .food8, .food9, .food10{
+					width: 100%;
+					height: 80px;
+					opacity: 0;
+					background-color: transparent;
+					overflow-y: hidden;
+					margin-top: 0px;
+	
+					}
+	
 	.resto{
 		width: 100%;
-		height: fit-content;
-		//*min-height: 880px;
+		min-height: 880px;
 		border-radius: 25px 25px 0px 0px;
 		background-color: lighten($color: $clr-4, $amount: 47%);
-		margin-top: 40px;
+		//*margin-top: 40px;
 		.restnom{
 			width: 100%;
 			height: 50px;
@@ -661,15 +695,17 @@ main
 		}
 	}
 }
-
 footer
+
 .bigcontf{
 	box-sizing: border-box;
 	width: 104%;
 	overflow: hidden;
+	
 	margin-left: -10px;
 	margin-bottom: -10px;
 	align-items: center;
+	//*@include mrglr-auto;
 	height: 220px;
 	background-color: $clr-b;
 	padding-top: 25px;
@@ -692,12 +728,15 @@ footer
 	filter: invert(100%);
 }
 }
-} //*****************XXXXXXXXXXXXXXXXXXXXXXXX FIN APPLICATION MOBILE XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX********************
+}
 
 
 //*****************XXXXXXXXXXXXXXXXXXXXXXXXXX APPLICATION TABLETTE XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX********************
 @media screen AND (min-width: 691px) and (max-width: 991px){
- 
+    
+	
+	//******************BODY ET SON CONTENU********************************
+	
 	body
 	.bigcont
 	{
@@ -729,7 +768,7 @@ footer
 	.accueil{
 		animation: 12s appears forwards;
 	}
-
+	//********************HEADER ET SON CONTENU*********************************
 	header
 	.bigconth
 	{
@@ -740,6 +779,7 @@ footer
 		box-sizing: border-box;
 		background-color: lighten($color: $clr-4, $amount: 47%);
 		padding-bottom: 30px;
+
 		.bandeau{
 			display: flex;
 			justify-content: space-around;
@@ -748,6 +788,7 @@ footer
 			width: 100%;
 			height: 100px;
 			padding-top: 25px;
+			//*background-color: lighten($color: $clr-4, $amount: 47%);
 			.arrow, .right{
 				box-sizing: border-box;
 				width: 60px;
@@ -759,6 +800,7 @@ footer
 				padding-top: 6px;	
 				&:hover{
 					color: $clr-1;
+					
 				}		
 			}
 			.logoomf{
@@ -769,6 +811,7 @@ footer
 		.entete{
 			width: 100%;
 			height: 250px;
+			//*background-color: lighten($color: $clr-4, $amount: 47%);
 			.localisation{
 				@include mrglr-auto;
 				width: 60%;
@@ -816,6 +859,7 @@ footer
 					font-weight: bold;
 					text-align: left;
 					padding-left: 5px;
+
 				}
 			}
 			.text221{
@@ -837,7 +881,7 @@ footer
 			.discover{
 				box-sizing: border-box;
 				margin-top: 20px;
-				width: 45%;
+				width: 35%;
 				height: 40px;
 				@include mrglr-auto;
 				border-radius: 25px;
@@ -850,6 +894,7 @@ footer
 					opacity: .6;
 					box-shadow: 3px 3px 15px $clr-b;
 					cursor: pointer;
+	
 				}
 				.explore{
 					background-color: transparent;
@@ -865,6 +910,7 @@ footer
 		}	
 		}
 		
+	//**************************MAIN ET SON CONTENU*****************************************
 	main
 	.bigcontm{
 		display: flex;
@@ -973,6 +1019,7 @@ footer
 				cursor: pointer;
 				&:hover{
 					box-shadow:3px 3px 3px 3px $clr-4;
+	
 				}
 				.restolink{
 					width: 100%;
@@ -1000,6 +1047,7 @@ footer
 				border-radius: 10px 10px 0 0;
 				& .new{
 					position: absolute;
+					//*align-items: flex-start;
 					width: 90px;
 					height: 25px;
 					background-color: $clr-3;
@@ -1029,6 +1077,7 @@ footer
 				min-height: 90px;
 				margin-bottom: 0px;
 				border-radius: 10px 10px 0 0;
+			
 			& .new{
 				position: absolute;
 				width: 90px;
@@ -1036,6 +1085,7 @@ footer
 				background-color: $clr-3;
 				color:  darken($clr-3, $amount: 40%);
 				margin-left: 75%;
+				//*align-items:stretch;
 				margin-bottom: 133px;
 				border-radius: 5px;
 				text-align: center;
@@ -1127,6 +1177,7 @@ footer
 			overflow: hidden;
 			align-items: center;
 			margin-bottom: -19px;
+			
 			.lnepic{
 				@include photo;
 			}
@@ -1141,45 +1192,49 @@ footer
 			height: 370px;
 			margin-bottom: 5px;
 		}
-		.food1{
-			animation: fadein1 800ms linear forwards;
-		}
-		.food2{
-			animation: fadein1 800ms 400ms linear forwards;
-		}
-		.food3{
-			animation: fadein1 800ms 800ms  linear forwards;
-		}
-		.food4{
-			animation: fadein1 800ms 1200ms linear forwards;
-		}
-		.food5{
-			animation: fadein1 800ms 1600ms linear forwards;
-		}
-		.food6{
-			
-			animation: fadein1 800ms 2000ms linear forwards;
-		}
-		.food7{
-			animation: fadein1 800ms 2400ms linear forwards;
-		}
-		.food8{
-			animation: fadein1 800ms 2800ms  linear forwards;
-		}
-		.food9{
-			animation: fadein1 800ms 3200ms linear forwards;
-		}
-		.food10{
-			animation: fadein1 800ms 3200ms linear forwards;
-		}
-		.food1, .food2, .food3, .food4, .food5, .food6, .food7, .food8, .food9, .food10{
-			width: 100%;
-			height: 80px;
-			opacity: 0;
-			background-color: transparent;
-			overflow-y: hidden;
-			margin-top: 0px;
-			}
+		
+					.food1{
+						animation: fadein1 800ms linear forwards;
+					}
+					.food2{
+						animation: fadein1 800ms 400ms linear forwards;
+					}
+					.food3{
+						animation: fadein1 800ms 800ms  linear forwards;
+					}
+					.food4{
+						animation: fadein1 800ms 1200ms linear forwards;
+					}
+					.food5{
+						animation: fadein1 800ms 1600ms linear forwards;
+					}
+					.food6{
+						
+						animation: fadein1 800ms 2000ms linear forwards;
+					}
+					.food7{
+						animation: fadein1 800ms 2400ms linear forwards;
+					}
+					.food8{
+						animation: fadein1 800ms 2800ms  linear forwards;
+					}
+					.food9{
+						animation: fadein1 800ms 3200ms linear forwards;
+					}
+					.food10{
+						animation: fadein1 800ms 3200ms linear forwards;
+					}
+		
+		
+					.food1, .food2, .food3, .food4, .food5, .food6, .food7, .food8, .food9, .food10{
+						width: 100%;
+						height: 80px;
+						opacity: 0;
+						background-color: transparent;
+						overflow-y: hidden;
+						margin-top: 0px;
+		
+						}
 		.resto{
 			width: 100%;
 			min-height: 880px;
@@ -1378,13 +1433,16 @@ footer
 		filter: invert(100%);
 	}
 	}
-	}//*****************XXXXXXXXXXXXXXXXXXXXXXXXXX FIN APPLICATION TABLETTE XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX********************
+	}
 
 
-//*****************XXXXXXXXXXXXXXXXXXXXXXXXXX APPLICATION ORDINATEUR XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX********************
+	//*****************XXXXXXXXXXXXXXXXXXXXXXXXXX APPLICATION ORDINATEUR XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX********************
 @media screen AND (min-width: 992px) {
+    
+		
+	//******************BODY ET SON CONTENU********************************
 	
-body	 
+	 
 	.bigcont{
 		min-width: 992px;
 		height: fit-content;
@@ -1412,7 +1470,7 @@ body
 	.accueil{
 		animation: 12s appears forwards;
 	}
-
+	//********************HEADER ET SON CONTENU*********************************
 	header
 	.bigconth
 	{
@@ -1421,6 +1479,7 @@ body
 		box-sizing: border-box;
 		background-color: lighten($color: $clr-4, $amount: 47%);
 		padding-bottom: 20px;
+
 		.bandeau{
 			display: flex;
 			justify-content: space-around;
@@ -1429,6 +1488,7 @@ body
 			width: 100%;
 			height: 100px;
 			padding-top: 25px;
+			//*background-color: lighten($color: $clr-4, $amount: 47%);
 			.arrow, .right{
 				box-sizing: border-box;
 				width: 60px;
@@ -1440,6 +1500,7 @@ body
 				padding-top: 6px;	
 				&:hover{
 					color: $clr-1;
+					
 				}		
 			}
 			.logoomf{
@@ -1450,9 +1511,10 @@ body
 		.entete{
 			width: 100%;
 			height: 300px;
+			//*background-color: lighten($color: $clr-4, $amount: 47%);
 			.localisation{
 				@include mrglr-auto;
-				width: 60%;
+				width: 40%;
 				height: 50px;
 				box-sizing: border-box;
 				font-size: 30px;
@@ -1497,6 +1559,7 @@ body
 					font-weight: bold;
 					text-align: left;
 					padding-left: 5px;
+
 				}
 			}
 			.text221{
@@ -1518,7 +1581,7 @@ body
 			.discover{
 				box-sizing: border-box;
 				margin-top: 20px;
-				width: 35%;
+				width: 25%;
 				height: 40px;
 				@include mrglr-auto;
 				border-radius: 25px;
@@ -1530,6 +1593,7 @@ body
 				&:hover  {
 					opacity: .6;
 					box-shadow: 3px 3px 15px $clr-b;
+	
 				}
 				.explore{
 					background-color: transparent;
@@ -1545,12 +1609,14 @@ body
 		}	
 		}
 		
+	//**************************MAIN ET SON CONTENU*****************************************
 	main
 	.bigcontm
 	{
 		display: flex;
 		flex-direction: column;
 		margin-left: -12px;
+		//*padding-right: 5%;
 		width: 101%;
 		height: fit-content;
 		.fct{
@@ -1569,22 +1635,31 @@ body
 		.ccd-mep1{
 			width: 33%;
 			height: fit-content;
+			//*display: flex;
 		}
 		.ccd-mep2{
 			width: 33%;
 			height: fit-content;
+			//*display: flex;
+			//*justify-content: space-around;
 		}
 		.ccd-mep3{
 			width: 33%;
 			height: fit-content;
+			//*display: flex;
+			//*justify-content: right;
 		}
 		.ccd{
 			position: relative;
 			width: 100%;
-			height: fit-content;			
+			//*max-width: 450px;
+			height: fit-content;
+			//*display: flex;
+			
 			margin-right: -1%;
 			margin-left: 3%;
 			margin-bottom: 30px;
+
 			font-size: 20px;
 			cursor: pointer;
 			&:hover{ 
@@ -1596,6 +1671,7 @@ body
 			.num{
 				margin-left: 45%;
 				margin-top: -15px;
+
 				position: absolute;
 				box-sizing: border-box;
 				font-size: 15px;
@@ -1625,6 +1701,7 @@ body
 					color: $clr-1;
 				}
 			}
+			
 		}
 		.lesrestos{
 			width: 100%;
@@ -1640,12 +1717,14 @@ body
 				font-size: 36px;
 				font-weight: bold;
 				text-align: center;
+				//*margin-left: 25px;
 			}
 		}
 		.restostick
 			{
 				width: 42%;
 				height: 240px;
+				//*min-width: 170px;
 				max-width: 420px;
 				min-height: 150px;
 				overflow:hidden;
@@ -1663,6 +1742,7 @@ body
 					.LNE-pic, .LPG-pic, .ALF-pic, .DDS-pic {
 						opacity: 1;
 					}
+	
 				}
 				.restolink{
 					width: 100%;
@@ -1781,6 +1861,7 @@ body
 					color: $clr-b;
 					font-weight: bold;
 					border-radius: 10px;
+					//*padding: 1% 1% 1% 1%;
 					&::first-letter{
 						text-transform: uppercase;
 					}
@@ -1819,6 +1900,7 @@ body
 			overflow: hidden;
 			align-items: center;
 			margin-bottom: -19px;
+			
 			.lnepic{
 				@include photo;
 			}
@@ -1852,6 +1934,8 @@ body
 				width: 90%;
 				margin-top: 60px;
 				margin-bottom: 20px;
+				
+
 				@include mrglr-auto;
 				.text{
 					@include catext;
@@ -1860,57 +1944,78 @@ body
 					@include catbarre;
 				}
 			}
-	.foody{
-		width: 100%;
-		height: 380px;
-		margin-bottom: 5px;
-	}
-	.foodyxl{
-		width: 100%;
-		height: 500px;
-		margin-bottom: 5px;
-	}
 
-	.food1{
-		animation: fadein1 800ms linear forwards;
-	}
-	.food2{
-		animation: fadein1 800ms 400ms linear forwards;
-	}
-	.food3{
-		animation: fadein1 800ms 800ms  linear forwards;
-	}
-	.food4{
-		animation: fadein1 800ms 1200ms linear forwards;
-	}
-	.food5{
-		animation: fadein1 800ms 1600ms linear forwards;
-	}
-	.food6{
-		
-		animation: fadein1 800ms 2000ms linear forwards;
-	}
-	.food7{
-		animation: fadein1 800ms 2400ms linear forwards;
-	}
-	.food8{
-		animation: fadein1 800ms 2800ms  linear forwards;
-	}
-	.food9{
-		animation: fadein1 800ms 3200ms linear forwards;
-	}
-	.food10{
-		animation: fadein1 800ms 3200ms linear forwards;
-	}
-	.food1, .food2, .food3, .food4, .food5, .food6, .food7, .food8, .food9, .food10{
-		width: 100%;
-		height: 80px;
-		opacity: 0;
-		background-color: transparent;
-		overflow-y: hidden;
-		margin-top: 20px;
-		}
+			
+//***********************************************************TEST ANIMATION
+
+
+
+.foody{
+	width: 100%;
+	height: 380px;
+	margin-bottom: 5px;
+}
+.foodyxl{
+	width: 100%;
+	height: 500px;
+	margin-bottom: 5px;
+}
+
+			.food1{
+				animation: fadein1 800ms linear forwards;
+			}
+			.food2{
+				animation: fadein1 800ms 400ms linear forwards;
+			}
+			.food3{
+				animation: fadein1 800ms 800ms  linear forwards;
+			}
+			.food4{
+				animation: fadein1 800ms 1200ms linear forwards;
+			}
+			.food5{
+				animation: fadein1 800ms 1600ms linear forwards;
+			}
+			.food6{
+				
+				animation: fadein1 800ms 2000ms linear forwards;
+			}
+			.food7{
+				animation: fadein1 800ms 2400ms linear forwards;
+			}
+			.food8{
+				animation: fadein1 800ms 2800ms  linear forwards;
+			}
+			.food9{
+				animation: fadein1 800ms 3200ms linear forwards;
+			}
+			.food10{
+				animation: fadein1 800ms 3200ms linear forwards;
+			}
+
+
+			.food1, .food2, .food3, .food4, .food5, .food6, .food7, .food8, .food9, .food10{
+				width: 100%;
+				height: 80px;
+				opacity: 0;
+				background-color: transparent;
+				overflow-y: hidden;
+				margin-top: 20px;
+
+				}
+
+	
+
+
+
+
+				
+			
+			
+//*************************************************************FIN DE TEST ANIM
+
 			.food {
+				
 				&:hover {
 					& > .food--resize {
 						animation: resizing 800ms forwards;
@@ -2015,6 +2120,8 @@ body
 				text-align: center;
 				margin-top: 40px;
 				margin-bottom: 40px;
+				
+	
 				.commande{
 					@include mrglr-auto;
 					border-radius: 25px;
@@ -2026,6 +2133,7 @@ body
 					padding-left: 30px;
 					padding-right: 30px;
 					border: none;		
+	
 					&:hover { 
 					opacity: .7;
 					box-shadow: 3px 3px 3px 3px $clr-4;	
@@ -2078,6 +2186,6 @@ body
 		filter: invert(100%);
 	}
 	}
-	}//*****************XXXXXXXXXXXXXXXXXXXXXXXXXX FIN APPLICATION ORDINATEUR XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX********************
+	}
 
 	
